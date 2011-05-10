@@ -34,6 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(793, 589);
             this.MinimizeBox = false;
             this.Name = "frmOptions";
@@ -45,5 +46,7 @@
         }
 
         #endregion
+
+
     }
 }
