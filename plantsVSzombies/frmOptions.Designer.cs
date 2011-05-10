@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptions));
-<<<<<<< HEAD
+
             this.label_quit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.label_quit.Click += new System.EventHandler(this.label1_Click);
             this.label_quit.MouseEnter += new System.EventHandler(this.label_quit_MouseEnter);
             this.label_quit.MouseLeave += new System.EventHandler(this.label_quit_MouseLeave);
-=======
+
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(792, 592);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
->>>>>>> e5275ba7e81bc50d2324f64a28f7331813f9ff06
+
             // 
             // frmOptions
             // 
@@ -66,11 +66,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(793, 589);
-<<<<<<< HEAD
+
             this.Controls.Add(this.label_quit);
-=======
+
             this.Controls.Add(this.pictureBox1);
->>>>>>> e5275ba7e81bc50d2324f64a28f7331813f9ff06
+
             this.MinimizeBox = false;
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -83,13 +83,11 @@
 
         #endregion
 
-<<<<<<< HEAD
+
         private System.Windows.Forms.Label label_quit;
 
 
-=======
-       
->>>>>>> e5275ba7e81bc50d2324f64a28f7331813f9ff06
+
 
     }
 }
