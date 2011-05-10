@@ -117,6 +117,7 @@ namespace plantsVSzombies
 
         private void linkBeginHover_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
             frmOptions frmo = new frmOptions();          
             frmo.Show();
            

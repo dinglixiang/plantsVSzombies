@@ -117,6 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_quit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAC8AAAAbCAYAAADszNYXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEgAA
+        CxIB0t1+/AAAApBJREFUWEftmMFRAzEQBCEO4iAMsiAJgiAGUnAGREAA/Pny48fDXHPXdeO9PdvAw5hC
+        VSpjaTWaHY1WwOV2u7042wb5c+1nS/zTMeeq+t8g/wsu7NXA4aHh8TiMbYbO/LI11YbAmyaU8eehvzT9
+        aRi7/4EIEKTs3RaM12n8veXUkIcIQJXM9TAGCHOAmoRjjvcqjayYA/+ukFwjr2BgLxNoyJM9wVUJyAtS
+        CbKGZJiH3Frj5IiBbDbJd9YhTkFZP7eVRwrVyTQVwn9sDEBnK0BNriMPJvNvQ6/JO1eT2qE6fEGgg+Tr
+        5myW9pAkYKkWxNaebE+muxue9hp5xAIXAb9MHoIshgAbSER7eULHkO/uxD7yYIu7m3ixDSTrZSJTF9c5
+        FEkLmUxnGxPmstcmeWL4GR74PE97V3UQgjyKqm6C5wUmZq2aGNeRA4/ETS6rFYQtic77iWiQplggErGz
+        gBP59HT1pDc9gQEBlGToVpGukqQQkGAd61WVT08FsuAhBLHZtC57jKc9kXeCxbWlZYirfs+k2Pi7bZ/l
+        xPSExqozkXew21zQtEv6FyX7C7VMg1MlFmVrO4a8VYfYa8nXqpHAzqWdJGuZFBQLrLW0ZlcUtNHaGyKu
+        cVeSd6B7HfU8MSaQl4/53ePs6ecj1UV4mt2pGC/G+NJOtnHQC5cWyd8vPIW8cOl5krA6VIKKsCx5Y6Tk
+        PU3XcxKMKdD88kepJIGsAGTHIpUAhI2zrGEfK0+ObxppJcdnV27BtlSzvhMIAeYqVB4pQDPLWnf9TpK1
+        lPVmmUfTapbHfZWLvRAEwgi7THjPfw8gx4aoAAAbqXJ9Cw4Rdx5MxEk8MPnOPnRO+tClHfH+/4Y90b9P
+        /pU/lfU+AIf53EabEWZ7AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
