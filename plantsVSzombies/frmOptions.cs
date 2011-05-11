@@ -21,7 +21,7 @@ namespace plantsVSzombies
         public void OpenMusic()
         {
 
-            mciSendString(@"open ""../../music/儿童歌曲-葫芦娃.mp3"" alias temp_alias", null, 0, 0);
+            mciSendString(@"open ""../../music/1983组合 - 快乐猪八戒 - 搞笑歌曲.mp3"" alias temp_alias", null, 0, 0);
             
         }
         public void stopMusic() 
@@ -38,17 +38,19 @@ namespace plantsVSzombies
             mciSendString(@"close temp_alias", null, 0, 0);
         }
         #endregion
+
         public frmOptions()
         {
             InitializeComponent();
-            OpenMusic(); //打开音乐文件
+            this.OpenMusic(); //打开音乐文件
             
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
         {
 
-            playMusic();//播放音乐
+            //playMusic();//播放音乐
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,15 +60,106 @@ namespace plantsVSzombies
 
         private void label_quit_MouseEnter(object sender, EventArgs e)
         {
-            this.stopMusic();//停止音乐
-            label_quit.Image = Image.FromFile("../../images/SelectorScreen_Quit2.png");
+            //this.stopMusic();//停止音乐
+            frmBegin.stopMusic();
+            label_quit.Image = Image.FromFile("../../images/quit.jpg");
+            
         }
 
         private void label_quit_MouseLeave(object sender, EventArgs e)
         {
-            this.playMusic();//播放音乐
-            label_quit.Image = Image.FromFile("../../images/SelectorScreen_Quit1.png");
+            //this.playMusic();//播放音乐
+            frmBegin.playMusic();
+            label_quit.Image = null;
+            
         }
+
+        private void label_help_MouseEnter(object sender, EventArgs e)
+        {
+            this.playMusic();
+            label_help.Image = Image.FromFile("../../images/help.jpg");
+        }
+
+        private void label_help_MouseLeave(object sender, EventArgs e)
+        {
+            label_help.Image = null;
+        }
+
+        private void label_choice_MouseEnter(object sender, EventArgs e)
+        {
+            label_choice.Image = Image.FromFile("../../images/choice.jpg");
+        }
+
+        private void label_choice_MouseLeave(object sender, EventArgs e)
+        {
+            label_choice.Image = null;
+        }
+
+        private void label_risk_MouseEnter(object sender, EventArgs e)
+        {
+            
+            label_risk.Image = Image.FromFile("../../images/risk.jpg");
+            //label_risk.Show();
+            label_risk.Update();
+        }
+
+        private void label_risk_MouseLeave(object sender, EventArgs e)
+        {
+            label_risk.Image = null;
+            
+        }
+
+        private void label_easegame_MouseEnter(object sender, EventArgs e)
+        {
+            label_easygame.Image = Image.FromFile("../../images/easygame.jpg");
+        }
+
+        private void label_easegame_MouseLeave(object sender, EventArgs e)
+        {
+            label_easygame.Image = null;
+            
+        }
+
+        //绘制多变形label
+        private void frmOptions_Paint(object sender, PaintEventArgs e)
+        {
+
+            //初始化一个GraphicsPath类的对象,label_risk
+            System.Drawing.Drawing2D.GraphicsPath riskGraphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
+            Point[] riskpoint = { new Point(0, 0),new Point(0, 80),new Point(90, 100),new Point(150, 114),new Point(330, 114),new Point(330, 0)};
+            riskGraphicsPath.AddPolygon(riskpoint);
+            //将控件的Region属性设置为上面创建的GraphicsPath对象
+            label_risk.Region = new Region(riskGraphicsPath);
+
+            //label_easygame
+            System.Drawing.Drawing2D.GraphicsPath easygameGraphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
+            Point[] point ={new Point(0, 0),new Point(0, 80),new Point(303, 129),new Point(303, 40)};
+            easygameGraphicsPath.AddPolygon(point);
+            //将控件的Region属性设置为上面创建的GraphicsPath对象
+            label_easygame.Region = new Region(easygameGraphicsPath);
+        }
+
+        private void label_shop_MouseEnter(object sender, EventArgs e)
+        {
+            label_shop.Image = Image.FromFile("../../images/shop.jpg");
+        }
+
+        private void label_shop_MouseLeave(object sender, EventArgs e)
+        {
+            label_shop.Image = null;
+        }
+
+        private void label_page_MouseEnter(object sender, EventArgs e)
+        {
+            label_page.Image = Image.FromFile("../../images/page_over.jpg");
+        }
+
+        private void label_page_MouseLeave(object sender, EventArgs e)
+        {
+            label_page.Image = null;
+        }
+
+
 
 
     }
