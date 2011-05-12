@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptions));
             this.label_quit = new System.Windows.Forms.Label();
             this.label_help = new System.Windows.Forms.Label();
@@ -35,6 +36,13 @@
             this.label_easygame = new System.Windows.Forms.Label();
             this.label_shop = new System.Windows.Forms.Label();
             this.label_page = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox_pic1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_pic2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic2)).BeginInit();
             this.SuspendLayout();
             // 
             // label_quit
@@ -104,13 +112,44 @@
             // label_page
             // 
             this.label_page.BackColor = System.Drawing.Color.Transparent;
-            this.label_page.Image = ((System.Drawing.Image)(resources.GetObject("label_page.Image")));
             this.label_page.Location = new System.Drawing.Point(329, 441);
             this.label_page.Name = "label_page";
             this.label_page.Size = new System.Drawing.Size(100, 106);
             this.label_page.TabIndex = 7;
             this.label_page.MouseEnter += new System.EventHandler(this.label_page_MouseEnter);
             this.label_page.MouseLeave += new System.EventHandler(this.label_page_MouseLeave);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // pictureBox_pic1
+            // 
+            this.pictureBox_pic1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox_pic1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_pic1.Image")));
+            this.pictureBox_pic1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_pic1.Name = "pictureBox_pic1";
+            this.pictureBox_pic1.Size = new System.Drawing.Size(292, 148);
+            this.pictureBox_pic1.TabIndex = 10;
+            this.pictureBox_pic1.TabStop = false;
+            // 
+            // pictureBox_pic2
+            // 
+            this.pictureBox_pic2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox_pic2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_pic2.Image")));
+            this.pictureBox_pic2.Location = new System.Drawing.Point(0, 145);
+            this.pictureBox_pic2.Name = "pictureBox_pic2";
+            this.pictureBox_pic2.Size = new System.Drawing.Size(292, 69);
+            this.pictureBox_pic2.TabIndex = 11;
+            this.pictureBox_pic2.TabStop = false;
             // 
             // frmOptions
             // 
@@ -119,6 +158,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(793, 589);
+            this.Controls.Add(this.pictureBox_pic1);
+            this.Controls.Add(this.pictureBox_pic2);
             this.Controls.Add(this.label_page);
             this.Controls.Add(this.label_shop);
             this.Controls.Add(this.label_risk);
@@ -132,6 +173,8 @@
             this.Text = "frmOptions";
             this.Load += new System.EventHandler(this.frmOptions_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,6 +188,11 @@
         private System.Windows.Forms.Label label_easygame;
         private System.Windows.Forms.Label label_shop;
         private System.Windows.Forms.Label label_page;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.PictureBox pictureBox_pic1;
+        private System.Windows.Forms.PictureBox pictureBox_pic2;
 
 
 

@@ -50,9 +50,10 @@ namespace plantsVSzombies
         {
 
             //playMusic();//播放音乐
-           
+            timer1.Enabled = true;//图片下降开始
         }
 
+        #region 各种label 事件
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -159,8 +160,48 @@ namespace plantsVSzombies
             label_page.Image = null;
         }
 
+        #endregion
 
+        Point pic1_point = new Point(0, -180);
+        Point pic2_point = new Point(0, -50);
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pic1_point.Y += 45;
+            pic2_point.Y += 45;
+            pictureBox_pic1.Location = pic1_point;//new Point(0,-180+n)
+            pictureBox_pic2.Location = pic2_point;//new Point(0, -50 + n)
+            if (pic1_point.Y >= 0)
+            {
 
+                timer1.Enabled = false;
+                timer2.Enabled = true;
+
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            pic1_point.Y -= 2;
+            pic2_point.Y = pic2_point.Y + 2;
+            pictureBox_pic1.Location = pic1_point;
+            pictureBox_pic2.Location = pic2_point;
+            if (pic1_point.Y - 2 <= -5)
+            {
+                pic1_point.Y = 0;
+                pic2_point.Y -= 5;
+                pictureBox_pic1.Location = pic1_point;
+                pictureBox_pic2.Location = pic2_point;
+                timer3.Enabled = true;
+                timer2.Enabled = false;
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            pic2_point.Y += 15;
+            pictureBox_pic2.Location = pic2_point;
+            timer3.Enabled = false;
+        }
     }
 }
