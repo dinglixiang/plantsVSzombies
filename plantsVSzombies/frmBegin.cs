@@ -99,7 +99,7 @@ namespace plantsVSzombies
         public void OpenMusic()
         {
 
-            mciSendString(@"open ""../../music/儿童歌曲-葫芦娃.mp3"" alias temp_alias", null, 0, 0);
+            mciSendString(@"open ""../../music/bmusic.mp3"" alias temp_alias", null, 0, 0);
             
         }
         public static void stopMusic() 
