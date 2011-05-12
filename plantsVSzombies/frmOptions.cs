@@ -12,32 +12,7 @@ namespace plantsVSzombies
 {
     public partial class frmOptions : Form
     {
-        //#region 背景音乐
-        //public static uint SND_ASYNC = 0x0001;
-        //public static uint SND_FILENAME = 0x00020000;
-        //[DllImport("winmm.dll")]
-        //public static extern uint mciSendString(string lpstrCommand,
-        //string lpstrReturnString, uint uReturnLength, uint hWndCallback);
-        //public void OpenMusic()
-        //{
 
-        //    mciSendString(@"open ""../../music/1983组合 - 快乐猪八戒 - 搞笑歌曲.mp3"" alias temp_alias", null, 0, 0);
-            
-        //}
-        //public void stopMusic() 
-        //{
-        //    mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
-        //}
-        //public void playMusic()
-        //{
-
-        //    mciSendString("play temp_alias repeat", null, 0, 0);
-        //}
-        //public void closeMusic()
-        //{
-        //    mciSendString(@"close temp_alias", null, 0, 0);
-        //}
-        //#endregion
 
         public frmOptions()
         {
@@ -50,13 +25,14 @@ namespace plantsVSzombies
 
             
             timer1.Enabled = true;//图片下降开始
-            //Music.openButtonMusic();
+            //Music.openButtonMusic();//不管用
         }
 
         #region 各种label 事件
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            QuitGame quit = new QuitGame();
+            quit.Show();
         }
 
         private void label_quit_MouseEnter(object sender, EventArgs e)
@@ -147,26 +123,30 @@ namespace plantsVSzombies
 
         private void label_shop_MouseEnter(object sender, EventArgs e)
         {
+            Music.playButtonMusic();
             label_shop.Image = Image.FromFile("../../images/shop.jpg");
         }
 
         private void label_shop_MouseLeave(object sender, EventArgs e)
         {
+            Music.stopButtonMusic();
             label_shop.Image = null;
         }
 
         private void label_page_MouseEnter(object sender, EventArgs e)
         {
+            Music.playButtonMusic();
             label_page.Image = Image.FromFile("../../images/page_over.jpg");
         }
 
         private void label_page_MouseLeave(object sender, EventArgs e)
         {
+            Music.stopButtonMusic();
             label_page.Image = null;
         }
 
         #endregion
-
+        #region //档案掉落
         Point pic1_point = new Point(0, -180);
         Point pic2_point = new Point(0, -50);
 
@@ -211,6 +191,7 @@ namespace plantsVSzombies
 
         private void pictureBox_pic2_MouseEnter(object sender, EventArgs e)
         {
+            Music.playButtonMusic();
             pictureBox_pic2.Image = Image.FromFile("../../images/SelectorScreen_WoodSign2_press.png");
         }
 
@@ -218,7 +199,7 @@ namespace plantsVSzombies
         {
             pictureBox_pic2.Image = Image.FromFile("../../images/SelectorScreen_WoodSign2.png");
         }
-
+        #endregion
         private void label_risk_Click(object sender, EventArgs e)
         {
 
