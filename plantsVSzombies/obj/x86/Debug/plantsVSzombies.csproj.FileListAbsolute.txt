@@ -20,3 +20,14 @@ E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.exe
 E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.pdb
 E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.QuitGame.resources
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.QuitGame.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.exe
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.pdb
+E:\plantsVSzombies\plantsVSzombies\bin\Debug\plantsVSzombies.exe
+E:\plantsVSzombies\plantsVSzombies\bin\Debug\plantsVSzombies.pdb
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmBegin.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmOptions.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.Properties.Resources.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.QuitGame.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.write.1.tlog
