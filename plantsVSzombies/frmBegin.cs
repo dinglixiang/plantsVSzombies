@@ -63,10 +63,12 @@ namespace plantsVSzombies
             }
             if (2 - _opacity < 0.0 + 0.05 && 2 - _opacity > 0.0 - 0.05)
             {
-                timer_logo.Enabled = false;
+                
                 panel_logo.Hide();
                 timer_logo.Enabled = true;
                 i++;
+                timer1_grassCircle.Enabled = true;//picturebox开始移动
+                timer2_grassCircle.Enabled = true;//草开始滚动
             }
 
 
@@ -100,32 +102,7 @@ namespace plantsVSzombies
 
         #endregion
 
-        //#region 背景音乐
-        //public static uint SND_ASYNC = 0x0001;
-        //public static uint SND_FILENAME = 0x00020000;
-        //[DllImport("winmm.dll")]
-        //public static extern uint mciSendString(string lpstrCommand,
-        //string lpstrReturnString, uint uReturnLength, uint hWndCallback);
-        //public void OpenMusic()
-        //{
-
-        //    mciSendString(@"open ""../../music/bmusic.mp3"" alias temp_alias", null, 0, 0);
-            
-        //}
-        //public static void stopMusic() 
-        //{
-        //    mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
-        //}
-        //public static void playMusic()
-        //{
-
-        //    mciSendString("play temp_alias repeat", null, 0, 0);
-        //}
-        //public void closeMusic()
-        //{
-        //    mciSendString(@"close temp_alias", null, 0, 0);
-        //}
-        //#endregion
+        
         
         public frmBegin()
         {
@@ -133,14 +110,52 @@ namespace plantsVSzombies
             draw = new PictureEffect();//淡入淡出
             graphicsPanel = panel_logo.CreateGraphics();//淡入淡出
             Music.OpenBackMusic();
-            //防止闪屏
+            //防止进度条滚动时闪屏（挺管用）
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
         }
 
+        #region 进度条
+        Point point = new Point(228, 483);
+        System.Drawing.Size pic_size = new System.Drawing.Size(64, 61);
+        private void timer1_grassCircle_Tick(object sender, EventArgs e)
+        {
+            point.X += 10;
+            //pic_size.Height = pic_size.Height - 1;
+            //pic_size.Width -= 1;
+            pictureBox2.Size = pic_size;
+            pictureBox2.Location = point;
+            if (point.X >= 500)
+            {
 
+                timer1_grassCircle.Enabled = false;
+                timer2_grassCircle.Enabled = false;
+            }
+        }
+        int n = 0;
+        private void timer2_grassCircle_Tick(object sender, EventArgs e)
+        {
+            n++;
+            switch (n)
+            {
+
+                case 1: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png"); break;
+                //pictureBox1.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+
+                case 2: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png");
+                    pictureBox2.Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+
+                case 3: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png");
+                    pictureBox2.Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
+                default: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png");
+                    pictureBox2.Image.RotateFlip(RotateFlipType.Rotate270FlipNone); n = 0; break;
+            }
+        }
+
+
+        #endregion
 
         private void frmBegin_Load(object sender, EventArgs e)
         {
@@ -151,7 +166,7 @@ namespace plantsVSzombies
 
 
 
-
+        #region 点击开始
         private void linkBeginHover_MouseLeave(object sender, EventArgs e)
         {
             linkBeginHover.Image = null;
@@ -170,7 +185,7 @@ namespace plantsVSzombies
              linkBeginHover.Image = Image.FromFile("../../images/dianjikaishi.jpg");
         }
 
-
+        #endregion
 
 
     }
