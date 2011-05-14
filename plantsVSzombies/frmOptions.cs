@@ -146,7 +146,7 @@ namespace plantsVSzombies
         }
 
         #endregion
-        #region //档案掉落
+        #region 档案掉落
         Point pic1_point = new Point(0, -180);
         Point pic2_point = new Point(0, -50);
 
@@ -203,6 +203,12 @@ namespace plantsVSzombies
         private void label_risk_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox_pic2_Click(object sender, EventArgs e)
+        {
+            UserProfiles up = new UserProfiles();
+            up.Show();
         }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewUser.Designer.cs">
+      <DependentUpon>AddNewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBegin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,16 @@
     <Compile Include="QuitGame.Designer.cs">
       <DependentUpon>QuitGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserOperate .cs" />
+    <Compile Include="UserProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfiles.Designer.cs">
+      <DependentUpon>UserProfiles.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewUser.resx">
+      <DependentUpon>AddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBegin.resx">
       <DependentUpon>frmBegin.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="QuitGame.resx">
       <DependentUpon>QuitGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfiles.resx">
+      <DependentUpon>UserProfiles.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

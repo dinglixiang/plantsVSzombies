@@ -87,10 +87,12 @@
             // 
             // timer1_grassCircle
             // 
+            this.timer1_grassCircle.Interval = 50;
             this.timer1_grassCircle.Tick += new System.EventHandler(this.timer1_grassCircle_Tick);
             // 
             // timer2_grassCircle
             // 
+            this.timer2_grassCircle.Interval = 50;
             this.timer2_grassCircle.Tick += new System.EventHandler(this.timer2_grassCircle_Tick);
             // 
             // frmBegin

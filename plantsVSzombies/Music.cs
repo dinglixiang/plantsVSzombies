@@ -13,7 +13,7 @@ namespace plantsVSzombies
         [DllImport("winmm.dll")]
         public static extern uint mciSendString(string lpstrCommand,
         string lpstrReturnString, uint uReturnLength, uint hWndCallback);
-
+        #region 背景音乐
         public static void OpenBackMusic()
         {
 
@@ -33,7 +33,8 @@ namespace plantsVSzombies
         {
             mciSendString(@"close temp_alias", null, 0, 0);
         }
-
+        #endregion
+        #region button音效
         public static void openButtonMusic()
         {
             mciSendString(@"open ""../../music/puff.mp3", null, 0, 0);
@@ -47,7 +48,8 @@ namespace plantsVSzombies
 
         public static void stopButtonMusic() 
         {
-            mciSendString("stop ../../music/puff.mp3", null, 0, 0); 
+            mciSendString("stop ../../music/puff.mp3", null, 0, 0);
         }
+        #endregion
     }
 }
