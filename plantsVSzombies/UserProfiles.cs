@@ -179,7 +179,7 @@ namespace plantsVSzombies
 
                     user.deleteUser(label.Text);
                     this.Controls.Remove(label);//删除当前label
-                    if (frmOptions.label_username.Text.Equals(label.Text)) { frmOptions.label_username.Text=""; }
+                    if (frmOptions.label_username.Text.Equals(label.Text)) { frmOptions.label_username.Text=""; }//如果删除的是牌子上的用户名，则将牌子上的用户名清空
                     break;
                 }
             }
