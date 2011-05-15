@@ -162,7 +162,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(793, 589);
-            this.Controls.Add(this.pictureBox_pic1);
             this.Controls.Add(this.pictureBox_pic2);
             this.Controls.Add(this.label_page);
             this.Controls.Add(this.label_shop);
@@ -171,6 +170,7 @@
             this.Controls.Add(this.label_help);
             this.Controls.Add(this.label_quit);
             this.Controls.Add(this.label_easygame);
+            this.Controls.Add(this.pictureBox_pic1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

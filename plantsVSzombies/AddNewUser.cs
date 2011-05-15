@@ -19,8 +19,15 @@ namespace plantsVSzombies
 
         private void label1_Click(object sender, EventArgs e)
         {
-            userOperate.addUser(textBox_username.Text);
-            this.Close();
+            if (textBox_username.Text.Equals("") || textBox_username.Text == null || textBox_username.Text == "")
+            { MessageBox.Show("用户名不能为空"); return; }
+            if (userOperate.addUser(textBox_username.Text)) 
+            {
+                frmOptions.label_username.Text = textBox_username.Text;//将选中的username赋给frmOptions.label_username
+                this.Close(); 
+            }
+            else { MessageBox.Show("用户名重复"); return; }
+            
             
         }
 

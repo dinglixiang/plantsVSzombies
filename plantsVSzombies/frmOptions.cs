@@ -12,7 +12,7 @@ namespace plantsVSzombies
 {
     public partial class frmOptions : Form
     {
-
+        public static Label label_username = null;//定义一个label_username用以显示当前用户
 
         public frmOptions()
         {
@@ -25,7 +25,8 @@ namespace plantsVSzombies
 
             
             timer1.Enabled = true;//图片下降开始
-            //Music.openButtonMusic();//不管用
+           
+
         }
 
         #region 各种label 事件
@@ -187,6 +188,16 @@ namespace plantsVSzombies
             pic2_point.Y += 15;
             pictureBox_pic2.Location = pic2_point;
             timer3.Enabled = false;
+            //动态生成一个label_username用以显示当前用户
+            label_username = new Label();
+            label_username.Location = new Point(65, 98);
+            label_username.Size = new System.Drawing.Size(180, 15);
+            label_username.Text = "";
+            label_username.BackColor = Color.FromArgb(82, 70, 50);//通过指定数值指定颜色
+            label_username.Font = new Font("宋体", 12F, FontStyle.Bold);//设置字体
+            label_username.ForeColor = Color.White;
+            label_username.TextAlign = ContentAlignment.MiddleCenter;
+            this.pictureBox_pic1.Controls.Add(label_username);//将label添加到picturebox中*********
         }
 
         private void pictureBox_pic2_MouseEnter(object sender, EventArgs e)
@@ -208,7 +219,8 @@ namespace plantsVSzombies
         private void pictureBox_pic2_Click(object sender, EventArgs e)
         {
             UserProfiles up = new UserProfiles();
-            up.Show();
+            up.ShowDialog();//将此窗体设为对话框模式，这样显示此窗体时候就不能操作其他窗体
+            
         }
     }
 }
