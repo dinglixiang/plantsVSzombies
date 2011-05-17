@@ -21,12 +21,8 @@ namespace plantsVSzombies
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
-        {
-
-            
+        { 
             timer1.Enabled = true;//图片下降开始
-           
-
         }
 
         #region 各种label 事件
@@ -228,6 +224,11 @@ namespace plantsVSzombies
         private void frmOptions_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label_easygame_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("敬请期待下一版本！");
         }
     }
 }
