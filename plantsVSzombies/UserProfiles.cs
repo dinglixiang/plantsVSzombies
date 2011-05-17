@@ -13,6 +13,8 @@ namespace plantsVSzombies
     {
         private static UserOperate user = new UserOperate();//必须是静态的
         private List<string> userList = user.readUser();
+        private Label selectUsername = new Label();//用来保存点击选择的label，用来操作
+
         public UserProfiles()
         {
             InitializeComponent();
@@ -77,7 +79,7 @@ namespace plantsVSzombies
                 this.Controls.Add(label1_new);
                 return;
             }
-            foreach(string username in userList)
+            foreach (string username in userList)
             {
 
                 Label label = new Label();
@@ -118,43 +120,21 @@ namespace plantsVSzombies
             AddNewUser addnewfrm = new AddNewUser();
             this.Close();
             addnewfrm.ShowDialog();//将此窗体设为对话框模式，这样显示此窗体时候就不能操作其他窗体
-            
+
         }
         //用户名label点击事件
-        private void label_Click(object sender, EventArgs e) 
+        private void label_Click(object sender, EventArgs e)
         {
-            ((Label)sender).BackColor = Color.Gold;//将当前的label背景色设置成Gold
-            //循环判断，不是当前的label将背景色设置成透明
-            foreach (Label label in labels)        
-            {
-
-                if (label != (Label)sender&&label.BackColor == Color.Gold)//也可以用label.Focused.Equals(false);作为判断条件
-                {
-                    
-                    
-                    label.BackColor = Color.Transparent;
-                    break;
-                }
-            }
-            
+            selectUsername.BackColor = Color.Transparent;//点击时将上次的选中的label背景颜色改为原来的
+            selectUsername = (Label)sender;//选中的label_username保存下来
+            selectUsername.BackColor = Color.Gold;//将当前点击的label背景颜色改为gold
         }
         #endregion
 
         private void label_ok_Click(object sender, EventArgs e)
         {
-            foreach (Label label in labels)
-            {
-
-                
-                if (label.BackColor.Equals(Color.Gold))//通过backcolor确定当前别选中的username
-                {
-
-
-                    frmOptions.label_username.Text = label.Text;//将选中的username赋给frmOptions.label_username
-                    
-                    break;
-                }
-            }
+            if (selectUsername.Text.Equals("") || selectUsername.Text == null) { MessageBox.Show("选择一个姓名"); return; }
+            frmOptions.label_username.Text = selectUsername.Text;//将选中的username赋给frmOptions.label_username
             this.Close();
         }
 
@@ -170,19 +150,11 @@ namespace plantsVSzombies
 
         private void label_delet_user_Click(object sender, EventArgs e)
         {
-            foreach (Label label in labels)
-            {
 
-
-                if (label.BackColor.Equals(Color.Gold))//通过backcolor确定当前别选中的username
-                {
-
-                    user.deleteUser(label.Text);
-                    this.Controls.Remove(label);//删除当前label
-                    if (frmOptions.label_username.Text.Equals(label.Text)) { frmOptions.label_username.Text=""; }//如果删除的是牌子上的用户名，则将牌子上的用户名清空
-                    break;
-                }
-            }
+            user.deleteUser(selectUsername.Text);
+            this.Controls.Remove(selectUsername);//删除当前label
+            if (frmOptions.label_username.Text.Equals(selectUsername.Text)) { frmOptions.label_username.Text = ""; }//如果删除的是牌子上的用户名，则将牌子上的用户名清空
+            selectUsername.Text = "";//删除之后将selectUsername中保存的信息删除
         }
 
         private void label_cancel_Click(object sender, EventArgs e)
@@ -192,7 +164,7 @@ namespace plantsVSzombies
 
         private void label_rename_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("改什么改，凑合着用吧","注意");
+            MessageBox.Show("改什么改，凑合着用吧", "注意");
         }
 
     }

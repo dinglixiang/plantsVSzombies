@@ -52,6 +52,7 @@
     <Compile Include="AddNewUser.Designer.cs">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="control\Manager.cs" />
     <Compile Include="frmBegin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,11 @@
     <Compile Include="frmSelectLevel.Designer.cs">
       <DependentUpon>frmSelectLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\levebackground\BackGround.cs" />
+    <Compile Include="model\levebackground\background_level1.cs" />
+    <Compile Include="model\Map.cs" />
+    <Compile Include="model\plants\Peashooter.cs" />
+    <Compile Include="model\plants\Plants.cs" />
     <Compile Include="Music.cs" />
     <Compile Include="PictureEffect.cs" />
     <Compile Include="Program.cs" />
@@ -134,6 +140,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
