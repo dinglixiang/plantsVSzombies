@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLevelOne));
             this.pictureBox_Peashooter = new System.Windows.Forms.PictureBox();
             this.timer_gameSpeed = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Peashooter)).BeginInit();
-
             this.SuspendLayout();
             // 
             // pictureBox_Peashooter
@@ -50,20 +48,18 @@
             // 
             // timer_gameSpeed
             // 
+            this.timer_gameSpeed.Interval = 50;
             this.timer_gameSpeed.Tick += new System.EventHandler(this.timer_gameSpeed_Tick);
             // 
             // frmLevelOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(811, 600);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(932, 680);
             this.Controls.Add(this.pictureBox_Peashooter);
             this.DoubleBuffered = true;
-
-            this.ClientSize = new System.Drawing.Size(793, 589);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-
             this.MaximizeBox = false;
             this.Name = "frmLevelOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

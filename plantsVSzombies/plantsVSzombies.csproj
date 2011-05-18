@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="model\levebackground\BackGround.cs" />
     <Compile Include="model\levebackground\background_level1.cs" />
+    <Compile Include="model\levebackground\Grassland.cs" />
     <Compile Include="model\Map.cs" />
     <Compile Include="model\plants\Peashooter.cs" />
     <Compile Include="model\plants\Plants.cs" />
