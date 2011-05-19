@@ -40,3 +40,4 @@ F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmLevel
 E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmLevelOne.resources
 E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmSelectLevel.resources
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmHelp.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmHelp.resources

@@ -31,6 +31,7 @@ namespace plantsVSzombies
         private void pictureBox_Peashooter_Click(object sender, EventArgs e)
         {
             pic_Plants = new PictureBox();
+            pic_Plants.BackColor = Color.Transparent;//背景透明
             pic_Plants.Image = Image.FromFile("../../images/Peashooter.gif");
             pic_Plants.SizeMode = PictureBoxSizeMode.AutoSize;
             pic_Plants.Click += new EventHandler(pic_PlantsPeashooter_Click);
