@@ -37,7 +37,7 @@ namespace plantsVSzombies
             //}
 
             
-            image = new Bitmap("../../images/login.jpg");//image类型
+            image = new Bitmap("../../images/slogo.png");//image类型
             newBmp = new Bitmap(panel_logo.Width, panel_logo.Height);//image类型
             graphicsBmp = Graphics.FromImage(newBmp);//Graphics类型
             _opacity = 0.0;//double类型
@@ -54,15 +54,15 @@ namespace plantsVSzombies
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.04;
+                _opacity = _opacity + 0.03;
             }
             else
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, 2 - _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.05;
+                _opacity = _opacity + 0.04;
             }
-            if (2 - _opacity < 0.0 + 0.05 && 2 - _opacity > 0.0 - 0.05)
+            if (2 - _opacity < 0.0 + 0.03 && 2 - _opacity > 0.0 - 0.03)
             {
                 
                 panel_logo.Hide();
@@ -123,14 +123,24 @@ namespace plantsVSzombies
         ProgressBar bar = new ProgressBar();
         Rectangle rec = new Rectangle(228,483,64,61);//将图片儿画在此矩形中
         Image image_grassCircle = Image.FromFile("../../images/grassCircle.png");
+        bool flag = false;
         private void timer1_grassCircle_Tick(object sender, EventArgs e)
-        {
-            bar.nextAction();
+        {         
+            bar.nextAction();       
             this.Invalidate();
         }
         
+        
         private void timer2_grassCircle_Tick(object sender, EventArgs e)
         {
+            if (!flag)
+            {
+                if (bar.getX() > 500)
+                {
+                    linkBeginHover.Image = null;
+                    flag = true;
+                }
+            }
             //rec.X += 10;
             //rec.Height -= 10;
             //rec.Width -= 10;
@@ -166,6 +176,7 @@ namespace plantsVSzombies
 
         private void frmBegin_Load(object sender, EventArgs e)
         {
+            bar.showzairu(linkBeginHover);
             Music.playBackMusic();
             GetImage();         
         }
@@ -175,7 +186,13 @@ namespace plantsVSzombies
         #region 点击开始
         private void linkBeginHover_MouseLeave(object sender, EventArgs e)
         {
-            linkBeginHover.Image = null;
+            if (!flag)
+            {
+                linkBeginHover.Image = Image.FromFile("../../images/zairuzhong.jpg");              
+            }
+            else {
+                linkBeginHover.Image = null;
+            }
         }
 
         private void linkBeginHover_Click(object sender, EventArgs e)
@@ -188,7 +205,13 @@ namespace plantsVSzombies
 
         private void linkBeginHover_MouseEnter(object sender, EventArgs e)
         {
-             linkBeginHover.Image = Image.FromFile("../../images/dianjikaishi.jpg");
+            if (!flag)
+            {
+                linkBeginHover.Image = Image.FromFile("../../images/zairuzhong.jpg");
+            }
+            else {
+                linkBeginHover.Image = Image.FromFile("../../images/dianjikaishi.jpg");
+            }
         }
 
         #endregion
