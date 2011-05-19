@@ -35,6 +35,7 @@ namespace plantsVSzombies.model.levebackground
         {
             rectangle.Location = this.location;
             g.DrawImage(image, rectangle);
+            
             if (start)
             {
 

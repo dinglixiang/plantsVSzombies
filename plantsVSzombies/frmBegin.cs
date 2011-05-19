@@ -116,44 +116,49 @@ namespace plantsVSzombies
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-
+            
         }
 
         #region 进度条
-        Point point = new Point(228, 483);
-        System.Drawing.Size pic_size = new System.Drawing.Size(64, 61);
+        ProgressBar bar = new ProgressBar();
+        Rectangle rec = new Rectangle(228,483,64,61);//将图片儿画在此矩形中
+        Image image_grassCircle = Image.FromFile("../../images/grassCircle.png");
         private void timer1_grassCircle_Tick(object sender, EventArgs e)
         {
-            point.X += 10;
-            //pic_size.Height = pic_size.Height - 1;
-            //pic_size.Width -= 1;
-            pictureBox2.Size = pic_size;
-            pictureBox2.Location = point;
-            if (point.X >= 500)
-            {
-
-                timer1_grassCircle.Enabled = false;
-                timer2_grassCircle.Enabled = false;
-            }
+            bar.nextAction();
+            this.Invalidate();
         }
-        int n = 0;
+        
         private void timer2_grassCircle_Tick(object sender, EventArgs e)
         {
-            n++;
-            switch (n)
-            {
+            //rec.X += 10;
+            //rec.Height -= 10;
+            //rec.Width -= 10;
+            ////pic_size.Height = pic_size.Height - 1;
+            ////pic_size.Width -= 1;
+            ////pictureBox2.Size = pic_size;
+            ////pictureBox2.Location = point;
+            //if (rec.X >= 500)
+            //{
 
-                case 1: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png"); break;
-                //pictureBox1.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            //    timer1_grassCircle.Enabled = false;
+            //    timer2_grassCircle.Enabled = false;
+            //}
+            //n++;
+            //switch (n)
+            //{
 
-                case 2: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png");
-                    pictureBox2.Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+            //    case 1: this.CreateGraphics().DrawImage(image_grassCircle,rec); break;
 
-                case 3: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png");
-                    pictureBox2.Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
-                default: pictureBox2.Image = Image.FromFile("../../images/grassCircle.png");
-                    pictureBox2.Image.RotateFlip(RotateFlipType.Rotate270FlipNone); n = 0; break;
-            }
+
+            //    case 2: image_grassCircle.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            //            this.CreateGraphics().DrawImage(image_grassCircle, rec); break;
+
+            //    case 3: image_grassCircle.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            //        this.CreateGraphics().DrawImage(image_grassCircle, rec); break;
+            //    default: image_grassCircle.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            //        this.CreateGraphics().DrawImage(image_grassCircle, rec); n = 0; break;
+            //}
         }
 
 
@@ -191,6 +196,16 @@ namespace plantsVSzombies
         private void frmBegin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmBegin_Paint(object sender, PaintEventArgs e)
+        {
+            bar.display(e.Graphics);
         }
 
 

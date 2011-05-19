@@ -34,17 +34,15 @@
             this.timer_logo = new System.Windows.Forms.Timer(this.components);
             this.linkBeginHover = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1_grassCircle = new System.Windows.Forms.Timer(this.components);
             this.timer2_grassCircle = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_logo
             // 
             this.panel_logo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_logo.Location = new System.Drawing.Point(-1, 0);
+            this.panel_logo.Location = new System.Drawing.Point(0, 0);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(796, 592);
             this.panel_logo.TabIndex = 2;
@@ -75,19 +73,10 @@
             this.pictureBox1.Size = new System.Drawing.Size(556, 114);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(248, 468);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(66, 64);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // timer1_grassCircle
             // 
-            this.timer1_grassCircle.Interval = 50;
             this.timer1_grassCircle.Tick += new System.EventHandler(this.timer1_grassCircle_Tick);
             // 
             // timer2_grassCircle
@@ -102,7 +91,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(793, 589);
             this.Controls.Add(this.panel_logo);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.linkBeginHover);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -113,8 +101,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBegin_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBegin_FormClosed);
             this.Load += new System.EventHandler(this.frmBegin_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmBegin_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,7 +113,6 @@
         private System.Windows.Forms.Timer timer_logo;
         private System.Windows.Forms.Label linkBeginHover;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1_grassCircle;
         private System.Windows.Forms.Timer timer2_grassCircle;
 
