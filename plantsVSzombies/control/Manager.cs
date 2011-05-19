@@ -6,6 +6,7 @@ using plantsVSzombies.model;
 using System.Drawing;
 using plantsVSzombies.model.plants;
 using plantsVSzombies.model.levebackground;
+using plantsVSzombies.model.bullet;
 
 namespace plantsVSzombies.control
 {
@@ -21,8 +22,11 @@ namespace plantsVSzombies.control
         {
 
             Peashooter ph = new Peashooter(location);
+           
             Map.plantList.Add(ph);
+            
         }
+
         public static void buildSunFlower(Point location)
         { }
 
@@ -36,6 +40,11 @@ namespace plantsVSzombies.control
 
                 ph.nextAction();
             }
+            foreach (Bullet bullet in Map.bulletList)
+            {
+
+                bullet.nextAction();
+            }
         }
 
         public static void updateDisplay(Graphics g)
@@ -46,6 +55,12 @@ namespace plantsVSzombies.control
             {
 
                 ph.display(g);
+            }
+
+            foreach (Bullet bullet in Map.bulletList)
+            {
+
+                bullet.display(g);
             }
         }
     }

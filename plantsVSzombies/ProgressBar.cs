@@ -8,8 +8,8 @@ namespace plantsVSzombies
 {
     class ProgressBar
     {
-        Rectangle rec_Circle;//将图片儿画在此矩形中
-        Rectangle rec_bar;
+        Rectangle rec_Circle;//将草圈画在此矩形中
+        Rectangle rec_bar;//将草坪画在此矩形中
         Image image;
         Image image_bar;
         

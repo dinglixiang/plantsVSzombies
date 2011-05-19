@@ -77,6 +77,8 @@
     <Compile Include="frmSelectLevel.Designer.cs">
       <DependentUpon>frmSelectLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\bullet\Bullet.cs" />
+    <Compile Include="model\bullet\Bullet_Peashooter.cs" />
     <Compile Include="model\levebackground\BackGround.cs" />
     <Compile Include="model\levebackground\background_level1.cs" />
     <Compile Include="model\levebackground\Grassland.cs" />

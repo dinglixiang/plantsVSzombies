@@ -48,7 +48,6 @@
             // 
             // timer_gameSpeed
             // 
-            this.timer_gameSpeed.Interval = 50;
             this.timer_gameSpeed.Tick += new System.EventHandler(this.timer_gameSpeed_Tick);
             // 
             // frmLevelOne

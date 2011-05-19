@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using plantsVSzombies.model.plants;
 using plantsVSzombies.model.levebackground;
+using plantsVSzombies.model.bullet;
 
 namespace plantsVSzombies.model
 {
@@ -11,6 +12,7 @@ namespace plantsVSzombies.model
     {
         public static List<Plants> plantList = new List<Plants>();
         public static List<BackGround> background = new List<BackGround>();
+        public static List<Bullet> bulletList = new List<Bullet>();
         //public Map()
         //{
 
