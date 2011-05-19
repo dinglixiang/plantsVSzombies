@@ -63,6 +63,7 @@
             this.label_help.Name = "label_help";
             this.label_help.Size = new System.Drawing.Size(60, 26);
             this.label_help.TabIndex = 2;
+            this.label_help.Click += new System.EventHandler(this.label_help_Click);
             this.label_help.MouseEnter += new System.EventHandler(this.label_help_MouseEnter);
             this.label_help.MouseLeave += new System.EventHandler(this.label_help_MouseLeave);
             // 
@@ -73,6 +74,7 @@
             this.label_choice.Name = "label_choice";
             this.label_choice.Size = new System.Drawing.Size(63, 27);
             this.label_choice.TabIndex = 3;
+            this.label_choice.Click += new System.EventHandler(this.label_choice_Click);
             this.label_choice.MouseEnter += new System.EventHandler(this.label_choice_MouseEnter);
             this.label_choice.MouseLeave += new System.EventHandler(this.label_choice_MouseLeave);
             // 
@@ -172,9 +174,9 @@
             this.Controls.Add(this.label_quit);
             this.Controls.Add(this.label_easygame);
             this.Controls.Add(this.pictureBox_pic1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸中文版";

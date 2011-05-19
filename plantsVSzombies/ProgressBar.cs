@@ -38,7 +38,6 @@ namespace plantsVSzombies
             rec_Circle.Y += 1;
             rec_Circle.Height -= 1;
             rec_Circle.Width -= 1;
-
         }
         public void showzairu(System.Windows.Forms.Label tmp) {
             tmp.Image = Image.FromFile("../../images/zairuzhong.jpg");

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectLevel));
-            this.btnfirstlevel = new System.Windows.Forms.Button();
-            this.btnsecondlevel = new System.Windows.Forms.Button();
             this.pbback = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -38,6 +36,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lblfirstlevel = new System.Windows.Forms.Label();
+            this.lblsecondlevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -46,25 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnfirstlevel
-            // 
-            this.btnfirstlevel.Location = new System.Drawing.Point(91, 185);
-            this.btnfirstlevel.Name = "btnfirstlevel";
-            this.btnfirstlevel.Size = new System.Drawing.Size(78, 30);
-            this.btnfirstlevel.TabIndex = 0;
-            this.btnfirstlevel.Text = "第一关";
-            this.btnfirstlevel.UseVisualStyleBackColor = true;
-            this.btnfirstlevel.Click += new System.EventHandler(this.btnfirstlevel_Click);
-            // 
-            // btnsecondlevel
-            // 
-            this.btnsecondlevel.Location = new System.Drawing.Point(260, 185);
-            this.btnsecondlevel.Name = "btnsecondlevel";
-            this.btnsecondlevel.Size = new System.Drawing.Size(78, 30);
-            this.btnsecondlevel.TabIndex = 0;
-            this.btnsecondlevel.Text = "第二关";
-            this.btnsecondlevel.UseVisualStyleBackColor = true;
             // 
             // pbback
             // 
@@ -88,6 +69,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(125, 139);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.btnfirstlevel_Click);
             // 
             // pictureBox2
             // 
@@ -99,6 +81,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(125, 139);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.lblsecondlevel_Click);
             // 
             // pictureBox3
             // 
@@ -144,6 +127,28 @@
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
             // 
+            // lblfirstlevel
+            // 
+            this.lblfirstlevel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblfirstlevel.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblfirstlevel.Location = new System.Drawing.Point(81, 185);
+            this.lblfirstlevel.Name = "lblfirstlevel";
+            this.lblfirstlevel.Size = new System.Drawing.Size(98, 30);
+            this.lblfirstlevel.TabIndex = 3;
+            this.lblfirstlevel.Text = "第一关";
+            this.lblfirstlevel.Click += new System.EventHandler(this.btnfirstlevel_Click);
+            // 
+            // lblsecondlevel
+            // 
+            this.lblsecondlevel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblsecondlevel.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblsecondlevel.Location = new System.Drawing.Point(249, 185);
+            this.lblsecondlevel.Name = "lblsecondlevel";
+            this.lblsecondlevel.Size = new System.Drawing.Size(97, 30);
+            this.lblsecondlevel.TabIndex = 3;
+            this.lblsecondlevel.Text = "第二关";
+            this.lblsecondlevel.Click += new System.EventHandler(this.lblsecondlevel_Click);
+            // 
             // frmSelectLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -151,16 +156,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(648, 432);
+            this.Controls.Add(this.lblsecondlevel);
+            this.Controls.Add(this.lblfirstlevel);
             this.Controls.Add(this.pbback);
-            this.Controls.Add(this.btnsecondlevel);
-            this.Controls.Add(this.btnfirstlevel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmSelectLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸";
@@ -178,8 +185,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnfirstlevel;
-        private System.Windows.Forms.Button btnsecondlevel;
         private System.Windows.Forms.PictureBox pbback;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -187,5 +192,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblfirstlevel;
+        private System.Windows.Forms.Label lblsecondlevel;
     }
 }

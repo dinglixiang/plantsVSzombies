@@ -17,12 +17,16 @@ namespace plantsVSzombies
         public frmOptions()
         {
             InitializeComponent();
-            
+            //防止进度条滚动时闪屏（挺管用）
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
         { 
             timer1.Enabled = true;//图片下降开始
+            Music.playBackMusic();//播放背景音乐
         }
 
         #region 各种label 事件
@@ -228,7 +232,19 @@ namespace plantsVSzombies
 
         private void label_easygame_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("敬请期待下一版本！");
+            MessageBox.Show("偶就是不解锁~~~");
+        }
+
+        private void label_choice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_help_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHelp help = new frmHelp();
+            help.Show();
         }
     }
 }
