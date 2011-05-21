@@ -11,14 +11,20 @@ namespace plantsVSzombies.model.bullet
         private Image image;
         private Point location;
         int damage = 10;
-        public Bullet_Peashooter(Point location)
+        int landNum = 0;
+        public Bullet_Peashooter(Point location,int landNum)
         {
             location.X += 50;
             image = Image.FromFile("../../images/peashooterBullet.png");
             this.location = location;
-
+            this.landNum = landNum;
         }
 
+        public int getLandNum()
+        {
+
+            return landNum;
+        }
         public Point getLocation()
         {
 

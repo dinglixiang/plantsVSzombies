@@ -49,7 +49,7 @@ namespace plantsVSzombies.control
                 for (int n = 0; n < Map.zombiesList.Count; n++)
                 {
                     zombies = Map.zombiesList[n];
-                    if (bullet.getLocation().Y - 40 == zombies.getLocation().Y && zombies.getLocation().X - bullet.getLocation().X == 5)
+                    if (bullet.getLandNum()== zombies.getLandNum() && zombies.getLocation().X - bullet.getLocation().X <= 2)
                     {
 
                         Map.bulletList.Remove(bullet);

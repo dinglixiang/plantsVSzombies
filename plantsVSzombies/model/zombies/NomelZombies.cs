@@ -50,7 +50,7 @@ namespace plantsVSzombies.model.zombies
         public void nextAction()
         {
 
-            this.location.X -= 10;
+            this.location.X -= 2;
             index++;
             if (index == count) { index = 0; }
             image.SelectActiveFrame(FrameDimension.Time, index);

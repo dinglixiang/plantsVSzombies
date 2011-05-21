@@ -12,5 +12,6 @@ namespace plantsVSzombies.model.bullet
         void display(Graphics g);
         Point getLocation();
         int getDamage();
+        int getLandNum();
     }
 }

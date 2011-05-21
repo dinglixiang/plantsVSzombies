@@ -40,7 +40,7 @@ namespace plantsVSzombies.model.plants
         {
 
             index++;
-            if (index == count) { index = 0; Map.bulletList.Add(new Bullet_Peashooter(location)); }
+            if (index == count) { index = 0; Map.bulletList.Add(new Bullet_Peashooter(location,landNum)); }
             image.SelectActiveFrame(FrameDimension.Time, index);
 
         }
