@@ -57,7 +57,7 @@ namespace plantsVSzombies
         private void timer_gameSpeed_Tick(object sender, EventArgs e)
         {
             
-            if (start == 80)
+            if (start == 20)
             {
                 if (build++ == 50)
                 {
@@ -312,7 +312,7 @@ namespace plantsVSzombies
                 case 1: location = new Point(950, 50); break;
                 case 2: location = new Point(950, 180); break;
                 case 3: location = new Point(950, 310); break;
-                default: location = new Point(950, 310); break;
+                default: location = new Point(950, 440); break;
             }
 
             return location;

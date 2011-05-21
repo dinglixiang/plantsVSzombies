@@ -13,6 +13,7 @@ namespace plantsVSzombies.control
 {
     class Manager
     {
+       
         public static void buildBackground_level1()
         {
 
@@ -39,7 +40,7 @@ namespace plantsVSzombies.control
             Map.zombiesList.Add(nomelzombies);
         }
         //子弹打僵尸
-        public static void attackZombies()
+        public static void attackZombies(Graphics g)
         {
             Bullet bullet;
             Zombies zombies;
@@ -49,10 +50,11 @@ namespace plantsVSzombies.control
                 for (int n = 0; n < Map.zombiesList.Count; n++)
                 {
                     zombies = Map.zombiesList[n];
-                    if (bullet.getLandNum()== zombies.getLandNum() && zombies.getLocation().X - bullet.getLocation().X <= 2)
+                    if (bullet.getLandNum()== zombies.getLandNum() && zombies.getLocation().X - bullet.getLocation().X <= -40)
                     {
 
                         Map.bulletList.Remove(bullet);
+                        g.DrawImage(Image.FromFile("../../images/SodRollCap.png"), bullet.getLocation());
                         if (zombies.getLife() < 0)
                         {
 
@@ -98,7 +100,7 @@ namespace plantsVSzombies.control
                 if (Map.zombiesList[i].getLocation().X < 100) { Map.zombiesList.Remove(Map.zombiesList[i]); continue; }
                 Map.zombiesList[i].nextAction();
             }
-            attackZombies();
+            //attackZombies(g);
         }
 
         public static void updateDisplay(Graphics g)
@@ -122,6 +124,8 @@ namespace plantsVSzombies.control
 
                 zombies.display(g);
             }
+
+            attackZombies(g);
         }
     }
 }

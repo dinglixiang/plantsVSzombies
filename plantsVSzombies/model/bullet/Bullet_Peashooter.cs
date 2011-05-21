@@ -39,7 +39,7 @@ namespace plantsVSzombies.model.bullet
         public void nextAction()
         {
 
-            location.X += 10;
+            location.X += 18;
         }
 
         public void display(Graphics g)
