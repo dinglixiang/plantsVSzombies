@@ -29,22 +29,23 @@ namespace plantsVSzombies.model.levebackground
         private Rectangle r2;
         private Rectangle r3;
         private Rectangle r4;
+        public bool flag = false;//草坪铺设完毕的标记 
 
         public Grassland()
         {
 
-            grass1StartLocation = new Point(210, 85);
-            grass2StartLocation = new Point(210, 215);
-            grass3StartLocation = new Point(210, 345);
-            grass4StartLocation = new Point(210, 475);
-            Roll1Location = new Point(190, 85);
-            RollCop1Location = new Point(190, 180);
-            Roll2Location = new Point(190, 210);
-            RollCop2Location = new Point(190, 310);
-            Roll3Location = new Point(190, 340);
-            RollCop3Location = new Point(190, 440);
-            Roll4Location = new Point(190, 470);
-            RollCop4Location = new Point(190, 570);
+            grass1StartLocation = new Point(210, 105);
+            grass2StartLocation = new Point(210, 235);
+            grass3StartLocation = new Point(210, 365);
+            grass4StartLocation = new Point(210, 495);
+            Roll1Location = new Point(190, 105);
+            RollCop1Location = new Point(190, 200);
+            Roll2Location = new Point(190, 230);
+            RollCop2Location = new Point(190, 330);
+            Roll3Location = new Point(190, 360);
+            RollCop3Location = new Point(190, 460);
+            Roll4Location = new Point(190, 490);
+            RollCop4Location = new Point(190, 595);
             imageGrassLand1 = Image.FromFile("../../images/sod1row.png");
             imageGrassLand2 = Image.FromFile("../../images/sod1row2.png");
             imageGrassLand3 = Image.FromFile("../../images/sod1row3.png");
@@ -65,23 +66,24 @@ namespace plantsVSzombies.model.levebackground
         }
 
         int length = 0;
-        public void nextAction()
+        public bool nextAction()
         {
-            if (length >= 620) { return; }
-            Roll1Location.X += 10;
-            Roll2Location.X += 10;
-            Roll3Location.X += 10;
-            Roll4Location.X += 10;
-            RollCop1Location.X += 10;
-            RollCop2Location.X += 10;
-            RollCop3Location.X += 10;
-            RollCop4Location.X += 10;
-            length += 10;
+            if (length >= 620) { return true; }
+            Roll1Location.X += 20;
+            Roll2Location.X += 20;
+            Roll3Location.X += 20;
+            Roll4Location.X += 20;
+            RollCop1Location.X += 20;
+            RollCop2Location.X += 20;
+            RollCop3Location.X += 20;
+            RollCop4Location.X += 20;
+            length += 20;
 
             r1.Width = length;
             r2.Width = length;
             r3.Width = length;
             r4.Width = length;
+            return false;
         }
 
         public void display(Graphics g)

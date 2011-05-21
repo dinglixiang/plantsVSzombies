@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace plantsVSzombies.model.bullet
+namespace plantsVSzombies.model.zombies
 {
-    interface Bullet
+    interface Zombies
     {
         void nextAction();
         void display(Graphics g);
         Point getLocation();
-        int getDamage();
+        int getLife();
+        void cutLife(int num);
+        int getLandNum();
     }
 }

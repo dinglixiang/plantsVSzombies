@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Drawing.Imaging;
-using plantsVSzombies.model.bullet;
 
-namespace plantsVSzombies.model.plants
+namespace plantsVSzombies.model.zombies
 {
-    class Peashooter : Plants
+    class NomelZombies : Zombies
     {
-        private Image image;
         private Point location;
-        private double liftnum;
-        private int count;//gif总帧数
-        private int index;//具体帧数
-        private int landNum = 0;//记录所在哪块草坪
-        public Peashooter(Point location ,int landNum)
+        Image image;
+        Random ran = new Random();
+        int life = 100;
+        int count = 0;
+        int index = 0;
+        private int landNum = 0;//第几块草坪
+        public NomelZombies(Point location ,int landNum)
         {
+            image = Image.FromFile("../../images/Zombie.gif");
+            count = image.GetFrameCount(FrameDimension.Time);
             this.location = location;
-            liftnum = 100.0;
-            image = Image.FromFile("../../images/Peashooter.gif");
-            count = image.GetFrameCount(FrameDimension.Time);//获得图片时间维度上的总帧数
             this.landNum = landNum;
         }
+
 
         public int getLandNum()
         {
@@ -36,13 +36,24 @@ namespace plantsVSzombies.model.plants
             return location;
         }
 
+        public int getLife()
+        {
+
+            return life;
+        }
+
+        public void cutLife(int num)
+        {
+
+            this.life -= num;
+        }
         public void nextAction()
         {
 
+            this.location.X -= 10;
             index++;
-            if (index == count) { index = 0; Map.bulletList.Add(new Bullet_Peashooter(location)); }
+            if (index == count) { index = 0; }
             image.SelectActiveFrame(FrameDimension.Time, index);
-
         }
 
         public void display(Graphics g)

@@ -10,7 +10,7 @@ namespace plantsVSzombies.model.bullet
     {
         private Image image;
         private Point location;
-
+        int damage = 10;
         public Bullet_Peashooter(Point location)
         {
             location.X += 50;
@@ -19,7 +19,17 @@ namespace plantsVSzombies.model.bullet
 
         }
 
+        public Point getLocation()
+        {
 
+            return location;
+        }
+
+        public int getDamage()
+        {
+
+            return damage;
+        }
         public void nextAction()
         {
 
@@ -28,7 +38,7 @@ namespace plantsVSzombies.model.bullet
 
         public void display(Graphics g)
         {
-           
+
             g.DrawImage(image, location);
         }
     }

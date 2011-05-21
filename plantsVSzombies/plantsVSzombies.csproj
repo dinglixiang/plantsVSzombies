@@ -91,6 +91,8 @@
     <Compile Include="model\Map.cs" />
     <Compile Include="model\plants\Peashooter.cs" />
     <Compile Include="model\plants\Plants.cs" />
+    <Compile Include="model\zombies\NomelZombies.cs" />
+    <Compile Include="model\zombies\Zombies.cs" />
     <Compile Include="Music.cs" />
     <Compile Include="PictureEffect.cs" />
     <Compile Include="Program.cs" />

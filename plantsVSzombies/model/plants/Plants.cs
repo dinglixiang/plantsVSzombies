@@ -12,6 +12,8 @@ namespace plantsVSzombies.model.plants
 
          void nextAction();
          void display(Graphics g);
+         int getLandNum();
+         Point getLocation();
         //应该再加一个子弹属性
     }
 }
