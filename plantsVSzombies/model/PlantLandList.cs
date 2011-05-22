@@ -29,6 +29,11 @@ namespace plantsVSzombies.model
             plantList.Remove(plant);
         }
 
+        public List<Plants> getList()
+        {
+
+            return plantList;
+        }
         public void fire()
         {
 

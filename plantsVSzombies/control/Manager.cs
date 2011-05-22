@@ -20,6 +20,7 @@ namespace plantsVSzombies.control
             background_level1 bg1 = new background_level1();
             Map.background.Add(bg1);
         }
+
         public static void buildPeashooter(Point location ,int landNum)
         {
 
@@ -57,40 +58,8 @@ namespace plantsVSzombies.control
             }
             Map.zombiesList.Add(nomelzombies);
         }
+        
         //子弹打僵尸
-        //public static void attackZombies(Graphics g)
-        //{
-        //    Bullet bullet;
-        //    Zombies zombies;
-        //    for (int i = 0; i < Map.bulletList.Count; i++)
-        //    {
-        //        bullet = Map.bulletList[i];
-        //        Point bLocation = bullet.getLocation();
-        //        for (int n = 0; n < Map.zombiesList.Count; n++)
-        //        {
-        //            zombies = Map.zombiesList[n];
-        //            Point zLocation = zombies.getLocation();
-        //            if (bullet.getLandNum() == zombies.getLandNum() && (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X>=-120))
-        //            {
-
-        //                Map.bulletList.Remove(bullet);
-        //                Point point = bullet.getLocation();
-        //                bLocation.X -= 30;
-        //                g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
-        //                if (zombies.getLife() < 0)
-        //                {
-
-        //                    Map.zombiesList.Remove(zombies);
-        //                    break;//一个子弹只能打一个僵尸，如果僵尸别打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
-        //                }
-                        
-        //                zombies.cutLife(bullet.getDamage());
-        //                break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
-        //            }
-        //        }
-        //    }
-        //}
-
         public static void attackZombies(Graphics g)
         {
             Bullet bullet;
@@ -106,7 +75,7 @@ namespace plantsVSzombies.control
                                {
                                    zombies = Map.zombiesLand1.getOneZombie(n);
                                    Point zLocation = zombies.getLocation();
-                                 if (zLocation.X - bLocation.X <= -75)
+                                   if (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X>-150)
                                   {
 
                                      Map.bulletList.Remove(bullet);
@@ -131,7 +100,7 @@ namespace plantsVSzombies.control
                         {
                             zombies = Map.zombiesLand2.getOneZombie(n);
                             Point zLocation = zombies.getLocation();
-                            if (zLocation.X - bLocation.X <= -75)
+                            if (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X>-150)
                             {
 
                                 Map.bulletList.Remove(bullet);
@@ -156,7 +125,7 @@ namespace plantsVSzombies.control
                         {
                             zombies = Map.zombiesLand3.getOneZombie(n);
                             Point zLocation = zombies.getLocation();
-                            if (zLocation.X - bLocation.X <= -75)
+                            if (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X > -150)
                             {
 
                                 Map.bulletList.Remove(bullet);
@@ -181,7 +150,7 @@ namespace plantsVSzombies.control
                         {
                             zombies = Map.zombiesLand4.getOneZombie(n);
                             Point zLocation = zombies.getLocation();
-                            if (zLocation.X - bLocation.X <= -75)
+                            if (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X > -150)
                             {
 
                                 Map.bulletList.Remove(bullet);
@@ -206,7 +175,7 @@ namespace plantsVSzombies.control
                         {
                             zombies = Map.zombiesLand5.getOneZombie(n);
                             Point zLocation = zombies.getLocation();
-                            if (zLocation.X - bLocation.X <= -75)
+                            if (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X > -150)
                             {
 
                                 Map.bulletList.Remove(bullet);
@@ -232,31 +201,127 @@ namespace plantsVSzombies.control
         //僵尸吃植物
         public static void attackPlants()
         {
-
+            Plants plant;
+            Zombies zombies;
+            Point zLocation;
+            Point pLocation;
             for (int i = 0; i < Map.plantList.Count; i++)
             {
-                Plants plant = Map.plantList[i];
-                Point pLocation = plant.getLocation();
-                int pLand = plant.getLandNum();
-                for (int n = 0; n < Map.zombiesList.Count; n++)
+                plant = Map.plantList[i];
+                pLocation = plant.getLocation();
+                
+                switch (plant.getLandNum())
                 {
-                    Zombies zombies = Map.zombiesList[n];
-                    Point zLocation = zombies.getLocation();
-                    int zLand = zombies.getLandNum();
-                    if (pLand == zLand && zLocation.X - pLocation.X <= -5)
-                    {
+                    #region 如果植物在第一个草坪
+                    case 1: for (int n = 0; n < Map.zombiesLand1.getList().Count; n++)
+                            {
+                                zombies = Map.zombiesLand1.getOneZombie(n);
+                                zLocation = zombies.getLocation();
+                                if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                                {
 
-                        zombies.beginEat();
-                        if (plant.getLife() <= 0)
+                                    zombies.beginEat();
+                                    if (plant.getLife() <= 0)//这种情况当多个僵尸同时吃一个植物时，要最后一口的僵尸会停下而其它的会因为刚被吃的plant已经不存在而不停地吃
+                                    {
+
+                                        Map.plantList.Remove(plant);
+                                        Map.plantLand1.remove(plant);
+                                        zombies.stopEat();//植物死后停止僵尸吃
+                                        break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                    }
+                                    plant.cutLife(zombies.getDamage());
+                                    break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                }
+                            }break;
+                    #endregion
+                    #region 如果植物在第二个草坪
+                    case 2: for (int n = 0; n < Map.zombiesLand2.getList().Count; n++)
                         {
+                            zombies = Map.zombiesLand2.getOneZombie(n);
+                            zLocation = zombies.getLocation();
+                            if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                            {
 
-                            Map.plantList.Remove(plant);
-                            zombies.stopEat();//植物死后停止僵尸吃
-                            break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
-                        }
-                        plant.cutLife(zombies.getDamage());
-                        break; ;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
-                    }
+                                zombies.beginEat();
+                                if (plant.getLife() <= 0)
+                                {
+
+                                    Map.plantList.Remove(plant);
+                                    Map.plantLand2.remove(plant);
+                                    zombies.stopEat();//植物死后停止僵尸吃
+                                    break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                }
+                                plant.cutLife(zombies.getDamage());
+                                break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                            }
+                        } break;
+                    #endregion
+                    #region 如果植物在第三个草坪
+                    case 3: for (int n = 0; n < Map.zombiesLand3.getList().Count; n++)
+                        {
+                            zombies = Map.zombiesLand3.getOneZombie(n);
+                            zLocation = zombies.getLocation();
+                            if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                            {
+
+                                zombies.beginEat();
+                                if (plant.getLife() <= 0)
+                                {
+
+                                    Map.plantList.Remove(plant);
+                                    Map.plantLand3.remove(plant);
+                                    zombies.stopEat();//植物死后停止僵尸吃
+                                    break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                }
+                                plant.cutLife(zombies.getDamage());
+                                break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                            }
+                        } break;
+                    #endregion
+                    #region 如果植物在第四个草坪
+                    case 4: for (int n = 0; n < Map.zombiesLand4.getList().Count; n++)
+                        {
+                            zombies = Map.zombiesLand4.getOneZombie(n);
+                            zLocation = zombies.getLocation();
+                            if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                            {
+
+                                zombies.beginEat();
+                                if (plant.getLife() <= 0)
+                                {
+
+                                    Map.plantList.Remove(plant);
+                                    Map.plantLand4.remove(plant);
+                                    zombies.stopEat();//植物死后停止僵尸吃
+                                    break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                }
+                                plant.cutLife(zombies.getDamage());
+                                break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                            }
+                        } break;
+                    #endregion
+                    #region 如果植物在第五个草坪
+                    case 5: for (int n = 0; n < Map.zombiesLand5.getList().Count; n++)
+                        {
+                            zombies = Map.zombiesLand5.getOneZombie(n);
+                            zLocation = zombies.getLocation();
+                            if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                            {
+
+                                zombies.beginEat();
+                                if (plant.getLife() <= 0)
+                                {
+
+                                    Map.plantList.Remove(plant);
+                                    Map.plantLand5.remove(plant);
+                                    zombies.stopEat();//植物死后停止僵尸吃
+                                    break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                }
+                                plant.cutLife(zombies.getDamage());
+                                break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                            }
+                        } break;
+                    #endregion
                 }
             }
         }
