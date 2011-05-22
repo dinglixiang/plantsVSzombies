@@ -16,10 +16,7 @@ namespace plantsVSzombies
         public frmLevelOne()
         {
             InitializeComponent();
-            //防止进度条滚动时闪屏（挺管用）
-            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
         }
 
         private void frmLevelOne_FormClosed(object sender, FormClosedEventArgs e)
@@ -27,6 +24,7 @@ namespace plantsVSzombies
             Application.Exit();
         }
         PictureBox pic_Plants;//中间pictureBox
+        
         private void pictureBox_Peashooter_Click(object sender, EventArgs e)
         {
             pic_Plants = new PictureBox();
@@ -48,6 +46,7 @@ namespace plantsVSzombies
         {
             Manager.buildPeashooter(seletPlantsLocation(pic_Plants.Location), selectPlantsLand(pic_Plants.Location));
             this.Controls.Remove(pic_Plants);
+            
         }
         #endregion
 
@@ -79,6 +78,12 @@ namespace plantsVSzombies
         private void frmLevelOne_Paint(object sender, PaintEventArgs e)
         {
             Manager.updateDisplay(e.Graphics);
+            //画阴影
+            if (this.Contains(pic_Plants))
+            {
+                e.Graphics.DrawImage(Image.FromFile("../../images/frame.png"), seletPlantsLocation(pic_Plants.Location));
+                
+            }
         }
 
         private void frmLevelOne_Load(object sender, EventArgs e)

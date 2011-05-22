@@ -112,11 +112,6 @@ namespace plantsVSzombies
             draw = new PictureEffect();//淡入淡出
             graphicsPanel = panel_logo.CreateGraphics();//淡入淡出
             
-            //防止进度条滚动时闪屏（挺管用）
-            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            
         }
 
         #region 进度条

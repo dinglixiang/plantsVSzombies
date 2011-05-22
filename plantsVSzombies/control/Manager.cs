@@ -47,21 +47,27 @@ namespace plantsVSzombies.control
             for (int i = 0; i < Map.bulletList.Count; i++)
             {
                 bullet = Map.bulletList[i];
+                Point bLocation = bullet.getLocation();
                 for (int n = 0; n < Map.zombiesList.Count; n++)
                 {
                     zombies = Map.zombiesList[n];
-                    if (bullet.getLandNum()== zombies.getLandNum() && zombies.getLocation().X - bullet.getLocation().X <= -40)
+                    Point zLocation = zombies.getLocation();
+                    if (bullet.getLandNum() == zombies.getLandNum() && (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X>=-120))
                     {
 
                         Map.bulletList.Remove(bullet);
-                        g.DrawImage(Image.FromFile("../../images/SodRollCap.png"), bullet.getLocation());
+                        Point point = bullet.getLocation();
+                        bLocation.X -= 30;
+                        g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
                         if (zombies.getLife() < 0)
                         {
 
                             Map.zombiesList.Remove(zombies);
                             continue;
                         }
+                        
                         zombies.cutLife(bullet.getDamage());
+                       
                     }
                 }
             }
