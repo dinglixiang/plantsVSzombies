@@ -63,16 +63,47 @@ namespace plantsVSzombies.control
                         {
 
                             Map.zombiesList.Remove(zombies);
-                            continue;
+                            break;//一个子弹只能打一个僵尸，如果僵尸别打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
                         }
                         
                         zombies.cutLife(bullet.getDamage());
-                       
+                        break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
                     }
                 }
             }
         }
 
+        //僵尸吃植物
+        public static void attackBullet()
+        {
+
+            for (int i = 0; i < Map.plantList.Count; i++)
+            {
+                Plants plant = Map.plantList[i];
+                Point pLocation = plant.getLocation();
+                int pLand = plant.getLandNum();
+                for (int n = 0; n < Map.zombiesList.Count; n++)
+                {
+                    Zombies zombies = Map.zombiesList[n];
+                    Point zLocation = zombies.getLocation();
+                    int zLand = zombies.getLandNum();
+                    if (pLand == zLand && zLocation.X - pLocation.X <= -5)
+                    {
+
+                        zombies.beginEat();
+                        if (plant.getLife() <= 0)
+                        {
+
+                            Map.plantList.Remove(plant);
+                            zombies.stopEat();//植物死后停止僵尸吃
+                            break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                        }
+                        plant.cutLife(zombies.getDamage());
+                        break; ;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                    }
+                }
+            }
+        }
         public static void updateAction()
         {
             #region foreach 需注意
@@ -106,7 +137,7 @@ namespace plantsVSzombies.control
                 if (Map.zombiesList[i].getLocation().X < 100) { Map.zombiesList.Remove(Map.zombiesList[i]); continue; }
                 Map.zombiesList[i].nextAction();
             }
-            //attackZombies(g);
+            attackBullet();
         }
 
         public static void updateDisplay(Graphics g)

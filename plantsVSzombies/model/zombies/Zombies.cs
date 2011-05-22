@@ -14,5 +14,8 @@ namespace plantsVSzombies.model.zombies
         int getLife();
         void cutLife(int num);
         int getLandNum();
+        void beginEat();
+        void stopEat();
+        int getDamage();
     }
 }

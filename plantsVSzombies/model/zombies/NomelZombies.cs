@@ -16,6 +16,8 @@ namespace plantsVSzombies.model.zombies
         int count = 0;
         int index = 0;
         private int landNum = 0;//第几块草坪
+        bool eat = false;
+        public int damage = 10;
         public NomelZombies(Point location ,int landNum)
         {
             image = Image.FromFile("../../images/Zombie.gif");
@@ -24,7 +26,11 @@ namespace plantsVSzombies.model.zombies
             this.landNum = landNum;
         }
 
+        public int getDamage()
+        {
 
+            return damage;
+        }
         public int getLandNum()
         {
 
@@ -47,13 +53,39 @@ namespace plantsVSzombies.model.zombies
 
             this.life -= num;
         }
+
+        public void beginEat()
+        {
+            if (eat) { return; }
+            eat = true;
+            image = Image.FromFile("../../images/ZombieAttack.gif");
+            count = image.GetFrameCount(FrameDimension.Time);
+            index = 0;
+        }
+
+        public void stopEat()
+        {
+
+            eat = false;
+            image = Image.FromFile("../../images/Zombie.gif");
+            index = 0;
+        }
         public void nextAction()
         {
 
+            if (eat) 
+            {
+
+                index++;
+                if (index == count) { index = 0; }
+                image.SelectActiveFrame(FrameDimension.Time, index);
+                return;
+            }
             this.location.X -= 2;
             index++;
             if (index == count) { index = 0; }
             image.SelectActiveFrame(FrameDimension.Time, index);
+            
         }
 
         public void display(Graphics g)

@@ -12,14 +12,14 @@ namespace plantsVSzombies.model.plants
     {
         private Image image;
         private Point location;
-        private double liftnum;
+        private int liftnum;
         private int count;//gif总帧数
         private int index;//具体帧数
         private int landNum = 0;//记录所在哪块草坪
         public Peashooter(Point location ,int landNum)
         {
             this.location = location;
-            liftnum = 100.0;
+            liftnum = 800;
             image = Image.FromFile("../../images/Peashooter.gif");
             count = image.GetFrameCount(FrameDimension.Time);//获得图片时间维度上的总帧数
             this.landNum = landNum;
@@ -36,6 +36,16 @@ namespace plantsVSzombies.model.plants
             return location;
         }
 
+        public void cutLife(int num)
+        {
+
+            liftnum -= num;
+        }
+        public int getLife()
+        {
+
+            return liftnum;
+        }
         public void nextAction()
         {
 
