@@ -16,6 +16,8 @@ namespace plantsVSzombies.model.plants
          Point getLocation();
          int getLife();
          void cutLife(int num);
+         void beginAttack();
+         void stopAttack();
         //应该再加一个子弹属性
     }
 }

@@ -89,6 +89,7 @@
     <Compile Include="model\levebackground\background_level1.cs" />
     <Compile Include="model\levebackground\Grassland.cs" />
     <Compile Include="model\Map.cs" />
+    <Compile Include="model\PlantLandList.cs" />
     <Compile Include="model\plants\Peashooter.cs" />
     <Compile Include="model\plants\Plants.cs" />
     <Compile Include="model\zombies\NomelZombies.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="UserProfiles.Designer.cs">
       <DependentUpon>UserProfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\ZombiesLandList.cs" />
     <EmbeddedResource Include="AddNewUser.resx">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </EmbeddedResource>

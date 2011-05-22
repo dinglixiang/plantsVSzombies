@@ -24,6 +24,15 @@ namespace plantsVSzombies.control
         {
 
             Peashooter ph = new Peashooter(location, landNum);
+            switch (landNum)
+            {
+
+                case 1: Map.plantLand1.addPlant(ph); break;
+                case 2: Map.plantLand2.addPlant(ph); break;
+                case 3: Map.plantLand3.addPlant(ph); break;
+                case 4: Map.plantLand4.addPlant(ph); break;
+                case 5: Map.plantLand5.addPlant(ph); break;
+            }
 
             Map.plantList.Add(ph);
 
@@ -37,9 +46,51 @@ namespace plantsVSzombies.control
         {
 
             NomelZombies nomelzombies = new NomelZombies(location, landNum);
+            switch (landNum)
+            {
+
+                case 1: Map.zombiesLand1.addZombies(nomelzombies); break;
+                case 2: Map.zombiesLand2.addZombies(nomelzombies); break;
+                case 3: Map.zombiesLand3.addZombies(nomelzombies); break;
+                case 4: Map.zombiesLand4.addZombies(nomelzombies); break;
+                case 5: Map.zombiesLand5.addZombies(nomelzombies); break;
+            }
             Map.zombiesList.Add(nomelzombies);
         }
         //子弹打僵尸
+        //public static void attackZombies(Graphics g)
+        //{
+        //    Bullet bullet;
+        //    Zombies zombies;
+        //    for (int i = 0; i < Map.bulletList.Count; i++)
+        //    {
+        //        bullet = Map.bulletList[i];
+        //        Point bLocation = bullet.getLocation();
+        //        for (int n = 0; n < Map.zombiesList.Count; n++)
+        //        {
+        //            zombies = Map.zombiesList[n];
+        //            Point zLocation = zombies.getLocation();
+        //            if (bullet.getLandNum() == zombies.getLandNum() && (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X>=-120))
+        //            {
+
+        //                Map.bulletList.Remove(bullet);
+        //                Point point = bullet.getLocation();
+        //                bLocation.X -= 30;
+        //                g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
+        //                if (zombies.getLife() < 0)
+        //                {
+
+        //                    Map.zombiesList.Remove(zombies);
+        //                    break;//一个子弹只能打一个僵尸，如果僵尸别打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+        //                }
+                        
+        //                zombies.cutLife(bullet.getDamage());
+        //                break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+        //            }
+        //        }
+        //    }
+        //}
+
         public static void attackZombies(Graphics g)
         {
             Bullet bullet;
@@ -48,33 +99,138 @@ namespace plantsVSzombies.control
             {
                 bullet = Map.bulletList[i];
                 Point bLocation = bullet.getLocation();
-                for (int n = 0; n < Map.zombiesList.Count; n++)
+                switch (bullet.getLandNum())
                 {
-                    zombies = Map.zombiesList[n];
-                    Point zLocation = zombies.getLocation();
-                    if (bullet.getLandNum() == zombies.getLandNum() && (zLocation.X - bLocation.X <= -75 && zLocation.X - bLocation.X>=-120))
-                    {
+                    #region  如果子弹在第一个草坪
+                    case 1:    for (int n = 0; n < Map.zombiesLand1.getList().Count; n++)
+                               {
+                                   zombies = Map.zombiesLand1.getOneZombie(n);
+                                   Point zLocation = zombies.getLocation();
+                                 if (zLocation.X - bLocation.X <= -75)
+                                  {
 
-                        Map.bulletList.Remove(bullet);
-                        Point point = bullet.getLocation();
-                        bLocation.X -= 30;
-                        g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
-                        if (zombies.getLife() < 0)
+                                     Map.bulletList.Remove(bullet);
+                                     Point point = bullet.getLocation();
+                                     bLocation.X -= 30;
+                                     g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
+                                     if (zombies.getLife() < 0)
+                                      {
+
+                                         Map.zombiesList.Remove(zombies);
+                                         Map.zombiesLand1.remove(zombies);
+                                         break;//一个子弹只能打一个僵尸，如果僵尸被打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                                      }
+
+                                      zombies.cutLife(bullet.getDamage());
+                                      break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                                   }
+                                }break;
+                    #endregion
+                    #region  如果子弹在第二个草坪
+                    case 2: for (int n = 0; n < Map.zombiesLand2.getList().Count; n++)
                         {
+                            zombies = Map.zombiesLand2.getOneZombie(n);
+                            Point zLocation = zombies.getLocation();
+                            if (zLocation.X - bLocation.X <= -75)
+                            {
 
-                            Map.zombiesList.Remove(zombies);
-                            break;//一个子弹只能打一个僵尸，如果僵尸别打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
-                        }
-                        
-                        zombies.cutLife(bullet.getDamage());
-                        break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
-                    }
+                                Map.bulletList.Remove(bullet);
+                                Point point = bullet.getLocation();
+                                bLocation.X -= 30;
+                                g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
+                                if (zombies.getLife() < 0)
+                                {
+
+                                    Map.zombiesList.Remove(zombies);
+                                    Map.zombiesLand2.remove(zombies);
+                                    break;//一个子弹只能打一个僵尸，如果僵尸被打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                                }
+
+                                zombies.cutLife(bullet.getDamage());
+                                break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                            }
+                        } break;
+                    #endregion
+                    #region  如果子弹在第三个草坪
+                    case 3: for (int n = 0; n < Map.zombiesLand3.getList().Count; n++)
+                        {
+                            zombies = Map.zombiesLand3.getOneZombie(n);
+                            Point zLocation = zombies.getLocation();
+                            if (zLocation.X - bLocation.X <= -75)
+                            {
+
+                                Map.bulletList.Remove(bullet);
+                                Point point = bullet.getLocation();
+                                bLocation.X -= 30;
+                                g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
+                                if (zombies.getLife() < 0)
+                                {
+
+                                    Map.zombiesList.Remove(zombies);
+                                    Map.zombiesLand3.remove(zombies);
+                                    break;//一个子弹只能打一个僵尸，如果僵尸被打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                                }
+
+                                zombies.cutLife(bullet.getDamage());
+                                break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                            }
+                        } break;
+                    #endregion
+                    #region  如果子弹在第四个草坪
+                    case 4: for (int n = 0; n < Map.zombiesLand4.getList().Count; n++)
+                        {
+                            zombies = Map.zombiesLand4.getOneZombie(n);
+                            Point zLocation = zombies.getLocation();
+                            if (zLocation.X - bLocation.X <= -75)
+                            {
+
+                                Map.bulletList.Remove(bullet);
+                                Point point = bullet.getLocation();
+                                bLocation.X -= 30;
+                                g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
+                                if (zombies.getLife() < 0)
+                                {
+
+                                    Map.zombiesList.Remove(zombies);
+                                    Map.zombiesLand4.remove(zombies);
+                                    break;//一个子弹只能打一个僵尸，如果僵尸被打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                                }
+
+                                zombies.cutLife(bullet.getDamage());
+                                break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                            }
+                        } break;
+                    #endregion
+                    #region  如果子弹在第五个草坪
+                    case 5: for (int n = 0; n < Map.zombiesLand5.getList().Count; n++)
+                        {
+                            zombies = Map.zombiesLand5.getOneZombie(n);
+                            Point zLocation = zombies.getLocation();
+                            if (zLocation.X - bLocation.X <= -75)
+                            {
+
+                                Map.bulletList.Remove(bullet);
+                                Point point = bullet.getLocation();
+                                bLocation.X -= 30;
+                                g.DrawImage(Image.FromFile("../../images/PeaBulletHit.gif"), bLocation);
+                                if (zombies.getLife() < 0)
+                                {
+
+                                    Map.zombiesList.Remove(zombies);
+                                    Map.zombiesLand5.remove(zombies);
+                                    break;//一个子弹只能打一个僵尸，如果僵尸被打死，推出针对子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                                }
+
+                                zombies.cutLife(bullet.getDamage());
+                                break;//一个子弹只能打一个僵尸，找到后推出针对此子弹搜索僵尸的内循环，开始针对另一个子弹搜索僵尸
+                            }
+                        } break;
+                    #endregion
                 }
             }
         }
-
         //僵尸吃植物
-        public static void attackBullet()
+        public static void attackPlants()
         {
 
             for (int i = 0; i < Map.plantList.Count; i++)
@@ -104,6 +260,9 @@ namespace plantsVSzombies.control
                 }
             }
         }
+
+        //
+        
         public static void updateAction()
         {
             #region foreach 需注意
@@ -137,7 +296,7 @@ namespace plantsVSzombies.control
                 if (Map.zombiesList[i].getLocation().X < 100) { Map.zombiesList.Remove(Map.zombiesList[i]); continue; }
                 Map.zombiesList[i].nextAction();
             }
-            attackBullet();
+            attackPlants();
         }
 
         public static void updateDisplay(Graphics g)

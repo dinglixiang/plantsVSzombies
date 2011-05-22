@@ -16,6 +16,8 @@ namespace plantsVSzombies.model.plants
         private int count;//gif总帧数
         private int index;//具体帧数
         private int landNum = 0;//记录所在哪块草坪
+        bool attack = true;//开始发弹的标志
+
         public Peashooter(Point location ,int landNum)
         {
             this.location = location;
@@ -23,6 +25,18 @@ namespace plantsVSzombies.model.plants
             image = Image.FromFile("../../images/Peashooter.gif");
             count = image.GetFrameCount(FrameDimension.Time);//获得图片时间维度上的总帧数
             this.landNum = landNum;
+        }
+
+        public void beginAttack()
+        {
+
+            attack = true;
+        }
+
+        public void stopAttack()
+        {
+
+            attack = false;
         }
 
         public int getLandNum()
@@ -50,7 +64,11 @@ namespace plantsVSzombies.model.plants
         {
 
             index++;
-            if (index == count) { index = 0; Map.bulletList.Add(new Bullet_Peashooter(location,landNum)); }
+            if (index == count) 
+            { 
+                index = 0;
+                if (attack) { Map.bulletList.Add(new Bullet_Peashooter(location, landNum)); }
+            }
             image.SelectActiveFrame(FrameDimension.Time, index);
 
         }

@@ -11,14 +11,23 @@ namespace plantsVSzombies.model
 {
     class Map
     {
-        public static List<Plants> plantList = new List<Plants>();
+        
         public static List<BackGround> background = new List<BackGround>();
         public static List<Bullet> bulletList = new List<Bullet>();
-        public static List<Zombies> zombiesList = new List<Zombies>();
-        //public Map()
-        //{
+    
+        public static List<Plants> plantList = new List<Plants>();
+        public static PlantLandList plantLand1 = new PlantLandList();
+        public static PlantLandList plantLand2 = new PlantLandList();
+        public static PlantLandList plantLand3 = new PlantLandList();
+        public static PlantLandList plantLand4 = new PlantLandList();
+        public static PlantLandList plantLand5 = new PlantLandList();
 
-        //    plantList = new List<Plants>();
-        //}
+        public static List<Zombies> zombiesList = new List<Zombies>();
+        public static ZombiesLandList zombiesLand1 = new ZombiesLandList();
+        public static ZombiesLandList zombiesLand2 = new ZombiesLandList();
+        public static ZombiesLandList zombiesLand3 = new ZombiesLandList();
+        public static ZombiesLandList zombiesLand4 = new ZombiesLandList();
+        public static ZombiesLandList zombiesLand5 = new ZombiesLandList();
+
     }
 }
