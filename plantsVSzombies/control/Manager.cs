@@ -205,18 +205,19 @@ namespace plantsVSzombies.control
             Zombies zombies;
             Point zLocation;
             Point pLocation;
-            for (int i = 0; i < Map.plantList.Count; i++)
+            //用僵尸做外循环寻找植物是因为如果用植物做外循环的话会出现一个僵尸吃植物时，其它僵尸不再吃
+            for (int i = 0; i < Map.zombiesList.Count; i++)
             {
-                plant = Map.plantList[i];
-                pLocation = plant.getLocation();
-                
-                switch (plant.getLandNum())
+                zombies = Map.zombiesList[i];
+                zLocation = zombies.getLocation();
+
+                switch (zombies.getLandNum())
                 {
-                    #region 如果植物在第一个草坪
-                    case 1: for (int n = 0; n < Map.zombiesLand1.getList().Count; n++)
+                    #region 如果僵尸在第一个草坪
+                    case 1: for (int n = 0; n < Map.plantLand1.getList().Count; n++)
                             {
-                                zombies = Map.zombiesLand1.getOneZombie(n);
-                                zLocation = zombies.getLocation();
+                                plant = Map.plantLand1.getOnePlant(n);
+                                pLocation = plant.getLocation();
                                 if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
                                 {
 
@@ -226,7 +227,8 @@ namespace plantsVSzombies.control
 
                                         Map.plantList.Remove(plant);
                                         Map.plantLand1.remove(plant);
-                                        zombies.stopEat();//植物死后停止僵尸吃
+                                        foreach (Zombies zombie in Map.zombiesLand1.getList()) { zombie.stopEat(); }//一颗植物死后停止这一草坪上所有僵尸吃，防止出现不停吃的植物的情况（也可以在植物类中加一个方法包含一个list，将吃这个植物的所有僵尸加到list中，当植物死时调用循环将吃这个植物的僵尸停止（不过一个草坪上的僵尸不会太多，所以就省事的选用全部停止的方法））
+                                        
                                         break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
                                     }
                                     plant.cutLife(zombies.getDamage());
@@ -235,20 +237,21 @@ namespace plantsVSzombies.control
                             }break;
                     #endregion
                     #region 如果植物在第二个草坪
-                    case 2: for (int n = 0; n < Map.zombiesLand2.getList().Count; n++)
+                        case 2: for (int n = 0; n < Map.plantLand2.getList().Count; n++)
                         {
-                            zombies = Map.zombiesLand2.getOneZombie(n);
-                            zLocation = zombies.getLocation();
+                            plant = Map.plantLand2.getOnePlant(n);
+                            pLocation = plant.getLocation();
                             if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
                             {
 
                                 zombies.beginEat();
-                                if (plant.getLife() <= 0)
+                                if (plant.getLife() <= 0)//这种情况当多个僵尸同时吃一个植物时，要最后一口的僵尸会停下而其它的会因为刚被吃的plant已经不存在而不停地吃
                                 {
 
                                     Map.plantList.Remove(plant);
                                     Map.plantLand2.remove(plant);
-                                    zombies.stopEat();//植物死后停止僵尸吃
+                                    foreach (Zombies zombie in Map.zombiesLand2.getList()) { zombie.stopEat(); }//一颗植物死后停止这一草坪上所有僵尸吃，防止出现不停吃的植物的情况（也可以在植物类中加一个方法包含一个list，将吃这个植物的所有僵尸加到list中，当植物死时调用循环将吃这个植物的僵尸停止（不过一个草坪上的僵尸不会太多，所以就省事的选用全部停止的方法））
+
                                     break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
                                 }
                                 plant.cutLife(zombies.getDamage());
@@ -257,20 +260,21 @@ namespace plantsVSzombies.control
                         } break;
                     #endregion
                     #region 如果植物在第三个草坪
-                    case 3: for (int n = 0; n < Map.zombiesLand3.getList().Count; n++)
+                        case 3: for (int n = 0; n < Map.plantLand3.getList().Count; n++)
                         {
-                            zombies = Map.zombiesLand3.getOneZombie(n);
-                            zLocation = zombies.getLocation();
+                            plant = Map.plantLand3.getOnePlant(n);
+                            pLocation = plant.getLocation();
                             if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
                             {
 
                                 zombies.beginEat();
-                                if (plant.getLife() <= 0)
+                                if (plant.getLife() <= 0)//这种情况当多个僵尸同时吃一个植物时，要最后一口的僵尸会停下而其它的会因为刚被吃的plant已经不存在而不停地吃
                                 {
 
                                     Map.plantList.Remove(plant);
                                     Map.plantLand3.remove(plant);
-                                    zombies.stopEat();//植物死后停止僵尸吃
+                                    foreach (Zombies zombie in Map.zombiesLand3.getList()) { zombie.stopEat(); }//一颗植物死后停止这一草坪上所有僵尸吃，防止出现不停吃的植物的情况（也可以在植物类中加一个方法包含一个list，将吃这个植物的所有僵尸加到list中，当植物死时调用循环将吃这个植物的僵尸停止（不过一个草坪上的僵尸不会太多，所以就省事的选用全部停止的方法））
+
                                     break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
                                 }
                                 plant.cutLife(zombies.getDamage());
@@ -279,48 +283,50 @@ namespace plantsVSzombies.control
                         } break;
                     #endregion
                     #region 如果植物在第四个草坪
-                    case 4: for (int n = 0; n < Map.zombiesLand4.getList().Count; n++)
-                        {
-                            zombies = Map.zombiesLand4.getOneZombie(n);
-                            zLocation = zombies.getLocation();
-                            if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                            case 4: for (int n = 0; n < Map.plantLand4.getList().Count; n++)
                             {
-
-                                zombies.beginEat();
-                                if (plant.getLife() <= 0)
+                                plant = Map.plantLand4.getOnePlant(n);
+                                pLocation = plant.getLocation();
+                                if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
                                 {
 
-                                    Map.plantList.Remove(plant);
-                                    Map.plantLand4.remove(plant);
-                                    zombies.stopEat();//植物死后停止僵尸吃
-                                    break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                    zombies.beginEat();
+                                    if (plant.getLife() <= 0)//这种情况当多个僵尸同时吃一个植物时，要最后一口的僵尸会停下而其它的会因为刚被吃的plant已经不存在而不停地吃
+                                    {
+
+                                        Map.plantList.Remove(plant);
+                                        Map.plantLand4.remove(plant);
+                                        foreach (Zombies zombie in Map.zombiesLand4.getList()) { zombie.stopEat(); }//一颗植物死后停止这一草坪上所有僵尸吃，防止出现不停吃的植物的情况（也可以在植物类中加一个方法包含一个list，将吃这个植物的所有僵尸加到list中，当植物死时调用循环将吃这个植物的僵尸停止（不过一个草坪上的僵尸不会太多，所以就省事的选用全部停止的方法））
+
+                                        break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                    }
+                                    plant.cutLife(zombies.getDamage());
+                                    break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
                                 }
-                                plant.cutLife(zombies.getDamage());
-                                break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
-                            }
-                        } break;
+                            } break;
                     #endregion
                     #region 如果植物在第五个草坪
-                    case 5: for (int n = 0; n < Map.zombiesLand5.getList().Count; n++)
-                        {
-                            zombies = Map.zombiesLand5.getOneZombie(n);
-                            zLocation = zombies.getLocation();
-                            if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
+                            case 5: for (int n = 0; n < Map.plantLand5.getList().Count; n++)
                             {
-
-                                zombies.beginEat();
-                                if (plant.getLife() <= 0)
+                                plant = Map.plantLand5.getOnePlant(n);
+                                pLocation = plant.getLocation();
+                                if (zLocation.X - pLocation.X <= -5 && zLocation.X - pLocation.X > -120)
                                 {
 
-                                    Map.plantList.Remove(plant);
-                                    Map.plantLand5.remove(plant);
-                                    zombies.stopEat();//植物死后停止僵尸吃
-                                    break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                    zombies.beginEat();
+                                    if (plant.getLife() <= 0)//这种情况当多个僵尸同时吃一个植物时，要最后一口的僵尸会停下而其它的会因为刚被吃的plant已经不存在而不停地吃
+                                    {
+
+                                        Map.plantList.Remove(plant);
+                                        Map.plantLand5.remove(plant);
+                                        foreach (Zombies zombie in Map.zombiesLand5.getList()) { zombie.stopEat(); }//植物死后停止僵尸吃}
+
+                                        break;//一个僵尸一次只能吃一个植物，如果此植物别吃完后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
+                                    }
+                                    plant.cutLife(zombies.getDamage());
+                                    break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
                                 }
-                                plant.cutLife(zombies.getDamage());
-                                break;//一个僵尸一次只能吃一个植物，找到吃这个植物的僵尸后，退出针对植物找僵尸的内循环，马上针对另一个植物开始搜索僵尸
-                            }
-                        } break;
+                            } break;
                     #endregion
                 }
             }

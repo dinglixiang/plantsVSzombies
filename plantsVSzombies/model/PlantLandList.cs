@@ -34,6 +34,11 @@ namespace plantsVSzombies.model
 
             return plantList;
         }
+        public Plants getOnePlant(int n)
+        {
+
+            return plantList[n];
+        }
         public void fire()
         {
 
