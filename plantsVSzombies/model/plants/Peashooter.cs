@@ -16,7 +16,7 @@ namespace plantsVSzombies.model.plants
         private int count;//gif总帧数
         private int index;//具体帧数
         private int landNum = 0;//记录所在哪块草坪
-        bool attack = true;//开始发弹的标志
+        bool attack = false;//开始发弹的标志
 
         public Peashooter(Point location ,int landNum)
         {

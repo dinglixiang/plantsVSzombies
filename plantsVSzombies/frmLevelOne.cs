@@ -314,10 +314,10 @@ namespace plantsVSzombies
             switch (num)
             {
 
-                case 1: location = new Point(950, 50); break;
-                case 2: location = new Point(950, 180); break;
-                case 3: location = new Point(950, 310); break;
-                default: location = new Point(950, 440); break;
+                case 1: location = new Point(850, 50); break;
+                case 2: location = new Point(850, 180); break;
+                case 3: location = new Point(850, 310); break;
+                default: location = new Point(850, 440); break;
             }
 
             return location;

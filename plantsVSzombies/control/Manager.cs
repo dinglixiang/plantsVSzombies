@@ -332,7 +332,20 @@ namespace plantsVSzombies.control
             }
         }
 
-        //
+        //判断是否有僵尸，是否开火
+        public static void FireOnOff()
+        {
+            if (Map.zombiesLand1.getList().Count > 0) { Map.plantLand1.fire(); }
+            else { Map.plantLand1.stopFire(); }
+            if (Map.zombiesLand2.getList().Count > 0) { Map.plantLand2.fire(); }
+            else { Map.plantLand2.stopFire(); }
+            if (Map.zombiesLand3.getList().Count > 0) { Map.plantLand3.fire(); }
+            else { Map.plantLand3.stopFire(); }
+            if (Map.zombiesLand4.getList().Count > 0) { Map.plantLand4.fire(); }
+            else { Map.plantLand4.stopFire(); }
+            if (Map.zombiesLand5.getList().Count > 0) { Map.plantLand5.fire(); }
+            else { Map.plantLand5.stopFire(); }
+        }
         
         public static void updateAction()
         {
@@ -357,7 +370,7 @@ namespace plantsVSzombies.control
             for (int i = 0; i < Map.bulletList.Count; i++)
             {
 
-                if (Map.bulletList[i].getLocation().X > 800) { Map.bulletList.Remove(Map.bulletList[i]); continue; }
+                if (Map.bulletList[i].getLocation().X > 900) { Map.bulletList.Remove(Map.bulletList[i]); continue; }//如果子弹超过一定距离，则让其消失
                 Map.bulletList[i].nextAction();
             }
             //改变僵尸位置和当前帧
@@ -367,6 +380,9 @@ namespace plantsVSzombies.control
                 if (Map.zombiesList[i].getLocation().X < 100) { Map.zombiesList.Remove(Map.zombiesList[i]); continue; }
                 Map.zombiesList[i].nextAction();
             }
+            //判断是否开火
+            FireOnOff();
+            //判断时候攻击植物
             attackPlants();
         }
 
@@ -391,7 +407,7 @@ namespace plantsVSzombies.control
 
                 zombies.display(g);
             }
-
+            //子弹打僵尸的动作
             attackZombies(g);
         }
     }
