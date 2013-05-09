@@ -15,7 +15,10 @@ namespace plantsVSzombies
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //frmBegin begin = new frmBegin();
+            //begin.Show();
+            Application.Run(new frmBegin());
+           
         }
     }
 }
