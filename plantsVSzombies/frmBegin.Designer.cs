@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBegin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkBegin = new System.Windows.Forms.LinkLabel();
             this.linkBeginHover = new System.Windows.Forms.LinkLabel();
+            this.panel_logo = new System.Windows.Forms.Panel();
+            this.panel2_logo = new System.Windows.Forms.Panel();
+            this.timer_logo = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_logo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,11 +80,34 @@
             this.linkBeginHover.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkBeginHover_LinkClicked);
             this.linkBeginHover.MouseLeave += new System.EventHandler(this.linkBeginHover_MouseLeave);
             // 
+            // panel_logo
+            // 
+            this.panel_logo.BackColor = System.Drawing.SystemColors.ControlText;
+            this.panel_logo.Controls.Add(this.panel2_logo);
+            this.panel_logo.Location = new System.Drawing.Point(0, -3);
+            this.panel_logo.Name = "panel_logo";
+            this.panel_logo.Size = new System.Drawing.Size(795, 593);
+            this.panel_logo.TabIndex = 2;
+            // 
+            // panel2_logo
+            // 
+            this.panel2_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2_logo.Location = new System.Drawing.Point(321, 228);
+            this.panel2_logo.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2_logo.Name = "panel2_logo";
+            this.panel2_logo.Size = new System.Drawing.Size(144, 125);
+            this.panel2_logo.TabIndex = 0;
+            // 
+            // timer_logo
+            // 
+            this.timer_logo.Tick += new System.EventHandler(this.timer_logo_Tick);
+            // 
             // frmBegin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 589);
+            this.Controls.Add(this.panel_logo);
             this.Controls.Add(this.linkBeginHover);
             this.Controls.Add(this.linkBegin);
             this.Controls.Add(this.pictureBox1);
@@ -87,8 +115,10 @@
             this.Name = "frmBegin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸中文版";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBegin_FormClosing);
             this.Load += new System.EventHandler(this.frmBegin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_logo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +129,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkBegin;
         private System.Windows.Forms.LinkLabel linkBeginHover;
+        private System.Windows.Forms.Panel panel_logo;
+        private System.Windows.Forms.Panel panel2_logo;
+        private System.Windows.Forms.Timer timer_logo;
 
     }
 }

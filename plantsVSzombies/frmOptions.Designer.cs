@@ -47,6 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(793, 589);
             this.Controls.Add(this.pictureBox1);
             this.MinimizeBox = false;
@@ -61,6 +62,10 @@
 
         #endregion
 
+<<<<<<< HEAD
         private System.Windows.Forms.PictureBox pictureBox1;
+=======
+
+>>>>>>> 81c85a4f21f3f8a5ddc11e10e37401a96bc1033b
     }
 }

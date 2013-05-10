@@ -11,14 +11,20 @@ namespace plantsVSzombies
 {
     public partial class frmOptions : Form
     {
+
+
         public frmOptions()
         {
             InitializeComponent();
+
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
         {
             
+            
         }
+
+
     }
 }

@@ -8,3 +8,13 @@ F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.exe
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.pdb
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmBegin.resources
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmOptions.resources
+E:\plants\plantsVSzombies\plantsVSzombies\bin\Debug\plantsVSzombies.exe
+E:\plants\plantsVSzombies\plantsVSzombies\bin\Debug\plantsVSzombies.pdb
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmBegin.resources
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmOptions.resources
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.Properties.Resources.resources
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.exe
+E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.pdb
