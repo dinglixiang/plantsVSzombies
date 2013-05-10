@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        private System.Windows.Forms.PictureBox pictureBox1;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -62,10 +62,7 @@
 
         #endregion
 
-<<<<<<< HEAD
-        private System.Windows.Forms.PictureBox pictureBox1;
-=======
+       
 
->>>>>>> 81c85a4f21f3f8a5ddc11e10e37401a96bc1033b
     }
 }
