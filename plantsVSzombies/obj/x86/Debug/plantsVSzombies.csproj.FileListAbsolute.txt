@@ -19,3 +19,4 @@ E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.write.1
 E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.exe
 E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.pdb
 E:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.QuitGame.resources
+F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.QuitGame.resources

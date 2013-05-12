@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuitGame));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblExit = new System.Windows.Forms.Label();
+            this.lblCancel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,12 +46,32 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblExit
+            // 
+            this.lblExit.Image = ((System.Drawing.Image)(resources.GetObject("lblExit.Image")));
+            this.lblExit.Location = new System.Drawing.Point(37, 176);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(160, 42);
+            this.lblExit.TabIndex = 1;
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
+            // lblCancel
+            // 
+            this.lblCancel.Image = ((System.Drawing.Image)(resources.GetObject("lblCancel.Image")));
+            this.lblCancel.Location = new System.Drawing.Point(213, 176);
+            this.lblCancel.Name = "lblCancel";
+            this.lblCancel.Size = new System.Drawing.Size(160, 42);
+            this.lblCancel.TabIndex = 2;
+            this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
+            // 
             // QuitGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(418, 243);
+            this.Controls.Add(this.lblCancel);
+            this.Controls.Add(this.lblExit);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuitGame";
@@ -64,5 +86,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblExit;
+        private System.Windows.Forms.Label lblCancel;
     }
 }

@@ -78,9 +78,9 @@ namespace plantsVSzombies
             fadeOutIn();        
              for (int j = 0; j < i; j++)
               { 
-                     pictureBox1.Top += 13;
+                     pictureBox1.Top += 11;
                      p++;
-                     if (p == 8)
+                     if (p == 10)
                          timer_logo.Enabled = false;
              }
            
@@ -133,6 +133,11 @@ namespace plantsVSzombies
             draw = new PictureEffect();//淡入淡出
             graphicsPanel = panel_logo.CreateGraphics();//淡入淡出
             Music.OpenBackMusic();
+            //防止闪屏
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
         }
 
 
@@ -154,8 +159,9 @@ namespace plantsVSzombies
 
         private void linkBeginHover_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmOptions frmo = new frmOptions();
-             frmo.Update();
+            frmo.Update();
             frmo.Show();
         }
 

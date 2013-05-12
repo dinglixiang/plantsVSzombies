@@ -170,6 +170,7 @@
             this.Controls.Add(this.label_help);
             this.Controls.Add(this.label_quit);
             this.Controls.Add(this.label_easygame);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOptions";

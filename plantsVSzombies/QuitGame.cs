@@ -15,5 +15,15 @@ namespace plantsVSzombies
         {
             InitializeComponent();
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -40,9 +40,9 @@
             // panel_logo
             // 
             this.panel_logo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_logo.Location = new System.Drawing.Point(0, -2);
+            this.panel_logo.Location = new System.Drawing.Point(-1, -2);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(795, 593);
+            this.panel_logo.Size = new System.Drawing.Size(800, 597);
             this.panel_logo.TabIndex = 2;
             // 
             // timer_logo
@@ -55,7 +55,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.linkBeginHover.BackColor = System.Drawing.Color.Transparent;
-            this.linkBeginHover.Location = new System.Drawing.Point(359, 550);
+            this.linkBeginHover.Location = new System.Drawing.Point(358, 548);
             this.linkBeginHover.Name = "linkBeginHover";
             this.linkBeginHover.Size = new System.Drawing.Size(88, 20);
             this.linkBeginHover.TabIndex = 4;
@@ -66,7 +66,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(126, -99);
+            this.pictureBox1.Location = new System.Drawing.Point(122, -106);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(556, 114);
             this.pictureBox1.TabIndex = 5;
@@ -81,6 +81,7 @@
             this.Controls.Add(this.panel_logo);
             this.Controls.Add(this.linkBeginHover);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmBegin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
