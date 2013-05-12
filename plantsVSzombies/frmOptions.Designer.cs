@@ -83,6 +83,7 @@
             this.label_risk.Name = "label_risk";
             this.label_risk.Size = new System.Drawing.Size(330, 114);
             this.label_risk.TabIndex = 4;
+            this.label_risk.Click += new System.EventHandler(this.label_risk_Click);
             this.label_risk.MouseEnter += new System.EventHandler(this.label_risk_MouseEnter);
             this.label_risk.MouseLeave += new System.EventHandler(this.label_risk_MouseLeave);
             // 

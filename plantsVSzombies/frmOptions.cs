@@ -218,5 +218,10 @@ namespace plantsVSzombies
         {
             pictureBox_pic2.Image = Image.FromFile("../../images/SelectorScreen_WoodSign2.png");
         }
+
+        private void label_risk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
