@@ -12,46 +12,45 @@ namespace plantsVSzombies
 {
     public partial class frmOptions : Form
     {
-        #region 背景音乐
-        public static uint SND_ASYNC = 0x0001;
-        public static uint SND_FILENAME = 0x00020000;
-        [DllImport("winmm.dll")]
-        public static extern uint mciSendString(string lpstrCommand,
-        string lpstrReturnString, uint uReturnLength, uint hWndCallback);
-        public void OpenMusic()
-        {
+        //#region 背景音乐
+        //public static uint SND_ASYNC = 0x0001;
+        //public static uint SND_FILENAME = 0x00020000;
+        //[DllImport("winmm.dll")]
+        //public static extern uint mciSendString(string lpstrCommand,
+        //string lpstrReturnString, uint uReturnLength, uint hWndCallback);
+        //public void OpenMusic()
+        //{
 
-            mciSendString(@"open ""../../music/1983组合 - 快乐猪八戒 - 搞笑歌曲.mp3"" alias temp_alias", null, 0, 0);
+        //    mciSendString(@"open ""../../music/1983组合 - 快乐猪八戒 - 搞笑歌曲.mp3"" alias temp_alias", null, 0, 0);
             
-        }
-        public void stopMusic() 
-        {
-            mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
-        }
-        public void playMusic()
-        {
+        //}
+        //public void stopMusic() 
+        //{
+        //    mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
+        //}
+        //public void playMusic()
+        //{
 
-            mciSendString("play temp_alias repeat", null, 0, 0);
-        }
-        public void closeMusic()
-        {
-            mciSendString(@"close temp_alias", null, 0, 0);
-        }
-        #endregion
+        //    mciSendString("play temp_alias repeat", null, 0, 0);
+        //}
+        //public void closeMusic()
+        //{
+        //    mciSendString(@"close temp_alias", null, 0, 0);
+        //}
+        //#endregion
 
         public frmOptions()
         {
             InitializeComponent();
-            this.OpenMusic(); //打开音乐文件
             
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
         {
-            pictureBox_pic1.Location = pic1_point;//new Point(0,-180+n)
-            pictureBox_pic2.Location = pic2_point;//new Point(0, -50 + n)
-            //playMusic();//播放音乐
+
+            
             timer1.Enabled = true;//图片下降开始
+            //Music.openButtonMusic();
         }
 
         #region 各种label 事件
@@ -62,62 +61,67 @@ namespace plantsVSzombies
 
         private void label_quit_MouseEnter(object sender, EventArgs e)
         {
-            //this.stopMusic();//停止音乐
-            frmBegin.stopMusic();
+            
+            Music.stopBackMusic();//停止背景音乐
             label_quit.Image = Image.FromFile("../../images/quit.jpg");
             
         }
 
         private void label_quit_MouseLeave(object sender, EventArgs e)
         {
-            //this.playMusic();//播放音乐
-            frmBegin.playMusic();
+            
+            Music.playBackMusic();//播放背景音乐
             label_quit.Image = null;
             
         }
 
         private void label_help_MouseEnter(object sender, EventArgs e)
         {
-            this.playMusic();
+            Music.playButtonMusic();
             label_help.Image = Image.FromFile("../../images/help.jpg");
         }
 
         private void label_help_MouseLeave(object sender, EventArgs e)
         {
+            Music.stopButtonMusic();
             label_help.Image = null;
         }
 
         private void label_choice_MouseEnter(object sender, EventArgs e)
         {
+            Music.playButtonMusic();
             label_choice.Image = Image.FromFile("../../images/choice.jpg");
         }
 
         private void label_choice_MouseLeave(object sender, EventArgs e)
         {
+            Music.stopButtonMusic();
             label_choice.Image = null;
         }
 
         private void label_risk_MouseEnter(object sender, EventArgs e)
         {
-            
+            Music.playButtonMusic();
             label_risk.Image = Image.FromFile("../../images/risk.jpg");
-            //label_risk.Show();
-            label_risk.Update();
+
         }
 
         private void label_risk_MouseLeave(object sender, EventArgs e)
         {
+            Music.stopButtonMusic();
             label_risk.Image = null;
             
         }
 
         private void label_easegame_MouseEnter(object sender, EventArgs e)
         {
+            Music.playButtonMusic();
             label_easygame.Image = Image.FromFile("../../images/easygame.jpg");
         }
 
         private void label_easegame_MouseLeave(object sender, EventArgs e)
         {
+            Music.stopButtonMusic();
             label_easygame.Image = null;
             
         }

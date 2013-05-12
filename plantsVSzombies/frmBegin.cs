@@ -100,39 +100,39 @@ namespace plantsVSzombies
 
         #endregion
 
-        #region 背景音乐
-        public static uint SND_ASYNC = 0x0001;
-        public static uint SND_FILENAME = 0x00020000;
-        [DllImport("winmm.dll")]
-        public static extern uint mciSendString(string lpstrCommand,
-        string lpstrReturnString, uint uReturnLength, uint hWndCallback);
-        public void OpenMusic()
-        {
+        //#region 背景音乐
+        //public static uint SND_ASYNC = 0x0001;
+        //public static uint SND_FILENAME = 0x00020000;
+        //[DllImport("winmm.dll")]
+        //public static extern uint mciSendString(string lpstrCommand,
+        //string lpstrReturnString, uint uReturnLength, uint hWndCallback);
+        //public void OpenMusic()
+        //{
 
-            mciSendString(@"open ""../../music/bmusic.mp3"" alias temp_alias", null, 0, 0);
+        //    mciSendString(@"open ""../../music/bmusic.mp3"" alias temp_alias", null, 0, 0);
             
-        }
-        public static void stopMusic() 
-        {
-            mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
-        }
-        public static void playMusic()
-        {
+        //}
+        //public static void stopMusic() 
+        //{
+        //    mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
+        //}
+        //public static void playMusic()
+        //{
 
-            mciSendString("play temp_alias repeat", null, 0, 0);
-        }
-        public void closeMusic()
-        {
-            mciSendString(@"close temp_alias", null, 0, 0);
-        }
-        #endregion
+        //    mciSendString("play temp_alias repeat", null, 0, 0);
+        //}
+        //public void closeMusic()
+        //{
+        //    mciSendString(@"close temp_alias", null, 0, 0);
+        //}
+        //#endregion
         
         public frmBegin()
         {
             InitializeComponent();
             draw = new PictureEffect();//淡入淡出
             graphicsPanel = panel_logo.CreateGraphics();//淡入淡出
-            OpenMusic();
+            Music.OpenBackMusic();
         }
 
 
@@ -140,7 +140,7 @@ namespace plantsVSzombies
         private void frmBegin_Load(object sender, EventArgs e)
         {
             GetImage();
-            playMusic();
+            Music.playBackMusic();
             
         }
 
@@ -155,8 +155,8 @@ namespace plantsVSzombies
         private void linkBeginHover_Click(object sender, EventArgs e)
         {
             frmOptions frmo = new frmOptions();
+             frmo.Update();
             frmo.Show();
-            
         }
 
         private void linkBeginHover_MouseEnter(object sender, EventArgs e)

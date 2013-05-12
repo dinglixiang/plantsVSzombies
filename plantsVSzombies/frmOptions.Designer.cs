@@ -135,7 +135,7 @@
             // 
             this.pictureBox_pic1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_pic1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_pic1.Image")));
-            this.pictureBox_pic1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_pic1.Location = new System.Drawing.Point(0, -180);
             this.pictureBox_pic1.Name = "pictureBox_pic1";
             this.pictureBox_pic1.Size = new System.Drawing.Size(292, 148);
             this.pictureBox_pic1.TabIndex = 10;
@@ -145,7 +145,7 @@
             // 
             this.pictureBox_pic2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_pic2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_pic2.Image")));
-            this.pictureBox_pic2.Location = new System.Drawing.Point(-2, 139);
+            this.pictureBox_pic2.Location = new System.Drawing.Point(0, -142);
             this.pictureBox_pic2.Name = "pictureBox_pic2";
             this.pictureBox_pic2.Size = new System.Drawing.Size(292, 75);
             this.pictureBox_pic2.TabIndex = 11;

@@ -14,24 +14,39 @@ namespace plantsVSzombies
         public static extern uint mciSendString(string lpstrCommand,
         string lpstrReturnString, uint uReturnLength, uint hWndCallback);
 
-        public void OpenMusic(String position)
+        public static void OpenBackMusic()
         {
 
-            mciSendString(@"open ""../../images/儿童歌曲-葫芦娃.mp3"" alias temp_alias", null, 0, 0);
+            mciSendString(@"open ""../../music/bmusic.mp3"" alias temp_alias", null, 0, 0);
 
         }
-        public void stopMusic()
+        public static void stopBackMusic()
         {
             mciSendString("stop temp_alias", null, 0, 0); //必须加temp_alias
         }
-        public void playMusic()
+        public static void playBackMusic()
         {
 
             mciSendString("play temp_alias repeat", null, 0, 0);
         }
-        public void closeMusic()
+        public static void closeBackMusic()
         {
             mciSendString(@"close temp_alias", null, 0, 0);
+        }
+
+        public static void openButtonMusic()
+        {
+            mciSendString(@"open ""../../music/puff.mp3"" alias button_alias ", null, 0, 0);
+        }
+        public static void playButtonMusic() 
+        {
+
+            mciSendString("play  ../../music/puff.mp3 ", null, 0, 0);
+        }
+
+        public static void stopButtonMusic() 
+        {
+            mciSendString("stop  ../../music/puff.mp3", null, 0, 0); 
         }
     }
 }
