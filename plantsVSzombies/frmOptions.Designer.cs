@@ -133,7 +133,7 @@
             // 
             // pictureBox_pic1
             // 
-            this.pictureBox_pic1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox_pic1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_pic1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_pic1.Image")));
             this.pictureBox_pic1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_pic1.Name = "pictureBox_pic1";
@@ -143,13 +143,15 @@
             // 
             // pictureBox_pic2
             // 
-            this.pictureBox_pic2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox_pic2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_pic2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_pic2.Image")));
-            this.pictureBox_pic2.Location = new System.Drawing.Point(0, 145);
+            this.pictureBox_pic2.Location = new System.Drawing.Point(-2, 139);
             this.pictureBox_pic2.Name = "pictureBox_pic2";
-            this.pictureBox_pic2.Size = new System.Drawing.Size(292, 69);
+            this.pictureBox_pic2.Size = new System.Drawing.Size(292, 75);
             this.pictureBox_pic2.TabIndex = 11;
             this.pictureBox_pic2.TabStop = false;
+            this.pictureBox_pic2.MouseEnter += new System.EventHandler(this.pictureBox_pic2_MouseEnter);
+            this.pictureBox_pic2.MouseLeave += new System.EventHandler(this.pictureBox_pic2_MouseLeave);
             // 
             // frmOptions
             // 
@@ -167,10 +169,11 @@
             this.Controls.Add(this.label_help);
             this.Controls.Add(this.label_quit);
             this.Controls.Add(this.label_easygame);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmOptions";
+            this.Text = "植物大战僵尸中文版";
             this.Load += new System.EventHandler(this.frmOptions_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic1)).EndInit();

@@ -48,7 +48,8 @@ namespace plantsVSzombies
 
         private void frmOptions_Load(object sender, EventArgs e)
         {
-
+            pictureBox_pic1.Location = pic1_point;//new Point(0,-180+n)
+            pictureBox_pic2.Location = pic2_point;//new Point(0, -50 + n)
             //playMusic();//播放音乐
             timer1.Enabled = true;//图片下降开始
         }
@@ -202,6 +203,16 @@ namespace plantsVSzombies
             pic2_point.Y += 15;
             pictureBox_pic2.Location = pic2_point;
             timer3.Enabled = false;
+        }
+
+        private void pictureBox_pic2_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox_pic2.Image = Image.FromFile("../../images/SelectorScreen_WoodSign2_press.png");
+        }
+
+        private void pictureBox_pic2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox_pic2.Image = Image.FromFile("../../images/SelectorScreen_WoodSign2.png");
         }
     }
 }

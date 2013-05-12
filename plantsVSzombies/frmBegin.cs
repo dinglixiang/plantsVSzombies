@@ -45,7 +45,7 @@ namespace plantsVSzombies
             timer_logo.Enabled = true;
 
         }
-
+        public static int i = 0;
         //淡入淡出效果
         private void fadeOutIn()
         {
@@ -53,27 +53,37 @@ namespace plantsVSzombies
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.01;
+                _opacity = _opacity + 0.04;
             }
             else
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, 2 - _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.01;
+                _opacity = _opacity + 0.05;
             }
-            if (2 - _opacity < 0.0 + 0.01 && 2 - _opacity > 0.0 - 0.01)
+            if (2 - _opacity < 0.0 + 0.05 && 2 - _opacity > 0.0 - 0.05)
             {
                 timer_logo.Enabled = false;
                 panel_logo.Hide();
+                timer_logo.Enabled = true;
+                i++;
             }
 
 
         }
 
+        public static int p = 0;
         private void timer_logo_Tick(object sender, EventArgs e)
         {
-            fadeOutIn();
-
+            fadeOutIn();        
+             for (int j = 0; j < i; j++)
+              { 
+                     pictureBox1.Top += 13;
+                     p++;
+                     if (p == 8)
+                         timer_logo.Enabled = false;
+             }
+           
         }
 
         private void frmBegin_FormClosing(object sender, FormClosingEventArgs e)
