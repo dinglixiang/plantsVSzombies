@@ -1,0 +1,31 @@
+生成密钥
+ssh-keygen -t rsa -C "825503721@qq.com"
+
+一直按回车键，找到.ssh文件夹，将自己的ssh key的两个文件放在此文件夹下，覆盖原有的两个文件即可。
+
+
+clone项目，在你自己想放项目文件的地方，运行：
+git clone git@github.com:dinglixiang/plantsVSzombies.git
+
+
+
+1.添加修改的文件
+  git add .
+
+2.提交到本地服务器
+  git commit -a -m "描述信息"
+
+3.更新远程服务器资源
+  git pull
+
+4.推送到远程服务器
+  git push
+
+
+5.基本配置
+
+git config --global user.name "huangyue"
+
+git config --global user.email "825503721@qq.com"
+
+name和email换成自己的。
