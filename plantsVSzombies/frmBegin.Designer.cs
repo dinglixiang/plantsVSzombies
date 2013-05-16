@@ -111,6 +111,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸中文版";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBegin_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBegin_FormClosed);
             this.Load += new System.EventHandler(this.frmBegin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -213,7 +213,9 @@ namespace plantsVSzombies
         #endregion
         private void label_risk_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmSelectLevel selectlevel = new frmSelectLevel();
+            selectlevel.Show();
         }
 
         private void pictureBox_pic2_Click(object sender, EventArgs e)
@@ -221,6 +223,11 @@ namespace plantsVSzombies
             UserProfiles up = new UserProfiles();
             up.ShowDialog();//将此窗体设为对话框模式，这样显示此窗体时候就不能操作其他窗体
             
+        }
+
+        private void frmOptions_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

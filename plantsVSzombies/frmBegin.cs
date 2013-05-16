@@ -187,6 +187,11 @@ namespace plantsVSzombies
 
         #endregion
 
+        private void frmBegin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
 
     }
 }

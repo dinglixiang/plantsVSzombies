@@ -33,3 +33,7 @@ E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.read.1.tlog
 E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.UserProfiles.resources
 E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.AddNewUser.resources
+F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.AddNewUser.resources
+F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.UserProfiles.resources
+F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmSelectLevel.resources
+F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmLevelOne.resources

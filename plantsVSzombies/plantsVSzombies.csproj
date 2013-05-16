@@ -58,11 +58,23 @@
     <Compile Include="frmBegin.Designer.cs">
       <DependentUpon>frmBegin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLevelOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLevelOne.Designer.cs">
+      <DependentUpon>frmLevelOne.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmOptions.Designer.cs">
       <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectLevel.Designer.cs">
+      <DependentUpon>frmSelectLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="Music.cs" />
     <Compile Include="PictureEffect.cs" />
@@ -87,9 +99,15 @@
     <EmbeddedResource Include="frmBegin.resx">
       <DependentUpon>frmBegin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLevelOne.resx">
+      <DependentUpon>frmLevelOne.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOptions.resx">
       <DependentUpon>frmOptions.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectLevel.resx">
+      <DependentUpon>frmSelectLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

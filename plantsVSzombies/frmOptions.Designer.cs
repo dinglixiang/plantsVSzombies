@@ -177,6 +177,7 @@
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸中文版";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOptions_FormClosed);
             this.Load += new System.EventHandler(this.frmOptions_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic1)).EndInit();
