@@ -97,6 +97,7 @@
             this.label_easygame.Name = "label_easygame";
             this.label_easygame.Size = new System.Drawing.Size(306, 127);
             this.label_easygame.TabIndex = 5;
+            this.label_easygame.Click += new System.EventHandler(this.label_easygame_Click);
             this.label_easygame.MouseEnter += new System.EventHandler(this.label_easegame_MouseEnter);
             this.label_easygame.MouseLeave += new System.EventHandler(this.label_easegame_MouseLeave);
             // 

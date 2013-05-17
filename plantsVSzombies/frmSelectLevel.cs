@@ -27,5 +27,12 @@ namespace plantsVSzombies
             frmLevelOne levelone = new frmLevelOne();
             levelone.Show();
         }
+
+        private void pbback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmOptions frmo = new frmOptions();
+            frmo.Show();
+        }
     }
 }

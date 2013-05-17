@@ -36,7 +36,7 @@ namespace plantsVSzombies
             //    timer_test.Enabled = true;
             //}
 
-
+            
             image = new Bitmap("../../images/login.jpg");//image类型
             newBmp = new Bitmap(panel_logo.Width, panel_logo.Height);//image类型
             graphicsBmp = Graphics.FromImage(newBmp);//Graphics类型
@@ -49,6 +49,7 @@ namespace plantsVSzombies
         //淡入淡出效果
         private void fadeOutIn()
         {
+            
             if (_opacity <= 1.0)
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, _opacity);
@@ -107,9 +108,10 @@ namespace plantsVSzombies
         public frmBegin()
         {
             InitializeComponent();
+            Music.OpenBackMusic();
             draw = new PictureEffect();//淡入淡出
             graphicsPanel = panel_logo.CreateGraphics();//淡入淡出
-            Music.OpenBackMusic();
+            
             //防止进度条滚动时闪屏（挺管用）
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.UserPaint, true);
@@ -159,9 +161,8 @@ namespace plantsVSzombies
 
         private void frmBegin_Load(object sender, EventArgs e)
         {
-            GetImage();
             Music.playBackMusic();
-            
+            GetImage();         
         }
 
 
