@@ -17,6 +17,10 @@ namespace plantsVSzombies
         public frmLevelOne()
         {
             InitializeComponent();
+            //防止进度条滚动时闪屏（挺管用）
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void frmLevelOne_FormClosed(object sender, FormClosedEventArgs e)

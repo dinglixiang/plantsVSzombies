@@ -9,39 +9,28 @@ using System.Windows.Forms;
 
 namespace plantsVSzombies
 {
-    public partial class frmSelectLevel : Form
+    public partial class frmHelp : Form
     {
-        public frmSelectLevel()
+        public frmHelp()
         {
             InitializeComponent();
+            Music.stopBackMusic();//停止背景音乐
             //防止进度条滚动时闪屏（挺管用）
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
-        private void frmSelectLevel_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnfirstlevel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmLevelOne levelone = new frmLevelOne();
-            levelone.Show();
-        }
-
-        private void pbback_Click(object sender, EventArgs e)
+        private void lblMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmOptions frmo = new frmOptions();
             frmo.Show();
         }
 
-        private void lblsecondlevel_Click(object sender, EventArgs e)
+        private void frmHelp_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MessageBox.Show("偶还没解锁哦！");
+            Application.Exit();
         }
     }
 }
