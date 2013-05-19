@@ -37,3 +37,5 @@ F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.AddNewUs
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.UserProfiles.resources
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmSelectLevel.resources
 F:\plants\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmLevelOne.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmLevelOne.resources
+E:\plantsVSzombies\plantsVSzombies\obj\x86\Debug\plantsVSzombies.frmSelectLevel.resources
