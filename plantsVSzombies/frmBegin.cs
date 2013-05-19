@@ -37,7 +37,7 @@ namespace plantsVSzombies
             //}
 
             
-            image = new Bitmap("../../images/login.jpg");//image类型
+            image = new Bitmap("../../images/slogo.png");//image类型
             newBmp = new Bitmap(panel_logo.Width, panel_logo.Height);//image类型
             graphicsBmp = Graphics.FromImage(newBmp);//Graphics类型
             _opacity = 0.0;//double类型
@@ -54,15 +54,15 @@ namespace plantsVSzombies
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.04;
+                _opacity = _opacity + 0.03;
             }
             else
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, 2 - _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.05;
+                _opacity = _opacity + 0.04;
             }
-            if (2 - _opacity < 0.0 + 0.05 && 2 - _opacity > 0.0 - 0.05)
+            if (2 - _opacity < 0.0 + 0.03 && 2 - _opacity > 0.0 - 0.03)
             {
                 
                 panel_logo.Hide();
