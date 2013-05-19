@@ -32,5 +32,17 @@ namespace plantsVSzombies
         {
             Application.Exit();
         }
+
+        private void frmHelp_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Music.stopBackMusic();//停止背景音乐
+            }
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                Music.playBackMusic();
+            }
+        }
     }
 }

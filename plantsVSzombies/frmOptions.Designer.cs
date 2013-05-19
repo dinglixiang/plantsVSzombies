@@ -182,6 +182,7 @@
             this.Text = "植物大战僵尸中文版";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOptions_FormClosed);
             this.Load += new System.EventHandler(this.frmOptions_Load);
+            this.SizeChanged += new System.EventHandler(this.frmOptions_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pic2)).EndInit();

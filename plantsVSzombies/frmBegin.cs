@@ -54,7 +54,7 @@ namespace plantsVSzombies
             {
                 draw.ChangeTransparency(image, graphicsBmp, newBmp.Size, _opacity);
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
-                _opacity = _opacity + 0.03;
+                _opacity = _opacity + 0.02;
             }
             else
             {
@@ -62,7 +62,7 @@ namespace plantsVSzombies
                 graphicsPanel.DrawImage(newBmp, panel_logo.ClientRectangle, 0, 0, newBmp.Width, newBmp.Height, GraphicsUnit.Pixel);
                 _opacity = _opacity + 0.04;
             }
-            if (2 - _opacity < 0.0 + 0.03 && 2 - _opacity > 0.0 - 0.03)
+            if (2 - _opacity < 0.0 + 0.02 && 2 - _opacity > 0.0 - 0.02)
             {
                 
                 panel_logo.Hide();
@@ -197,10 +197,11 @@ namespace plantsVSzombies
 
         private void linkBeginHover_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmOptions frmo = new frmOptions();
-            frmo.Update();
-            frmo.Show();
+                this.Hide();
+                frmOptions frmo = new frmOptions();
+                frmo.Update();
+                frmo.Show();
+
         }
 
         private void linkBeginHover_MouseEnter(object sender, EventArgs e)
@@ -229,6 +230,18 @@ namespace plantsVSzombies
         private void frmBegin_Paint(object sender, PaintEventArgs e)
         {
             bar.display(e.Graphics);
+        }
+
+        private void frmBegin_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Music.stopBackMusic();//停止背景音乐
+            }
+            if (this.WindowState == FormWindowState.Normal) {
+                Music.playBackMusic();
+            }
+           
         }
 
 

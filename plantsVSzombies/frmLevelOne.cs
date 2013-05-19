@@ -69,5 +69,17 @@ namespace plantsVSzombies
             timer_gameSpeed.Enabled = true;
 
         }
+
+        private void frmLevelOne_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Music.stopBackMusic();//停止背景音乐
+            }
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                Music.playBackMusic();
+            }
+        }
     }
 }

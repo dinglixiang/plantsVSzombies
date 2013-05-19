@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectLevel));
             this.pbback = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbfirst = new System.Windows.Forms.PictureBox();
+            this.pbsecond = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -39,8 +39,8 @@
             this.lblfirstlevel = new System.Windows.Forms.Label();
             this.lblsecondlevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbback)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfirst)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -58,30 +58,36 @@
             this.pbback.TabIndex = 1;
             this.pbback.TabStop = false;
             this.pbback.Click += new System.EventHandler(this.pbback_Click);
+            this.pbback.MouseEnter += new System.EventHandler(this.pbback_MouseEnter);
+            this.pbback.MouseLeave += new System.EventHandler(this.pbback_MouseLeave);
             // 
-            // pictureBox1
+            // pbfirst
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 92);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 139);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.btnfirstlevel_Click);
+            this.pbfirst.BackColor = System.Drawing.Color.Transparent;
+            this.pbfirst.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbfirst.BackgroundImage")));
+            this.pbfirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbfirst.Location = new System.Drawing.Point(68, 92);
+            this.pbfirst.Name = "pbfirst";
+            this.pbfirst.Size = new System.Drawing.Size(125, 139);
+            this.pbfirst.TabIndex = 2;
+            this.pbfirst.TabStop = false;
+            this.pbfirst.Click += new System.EventHandler(this.btnfirstlevel_Click);
+            this.pbfirst.MouseEnter += new System.EventHandler(this.pbfirst_MouseEnter);
+            this.pbfirst.MouseLeave += new System.EventHandler(this.pbfirst_MouseLeave);
             // 
-            // pictureBox2
+            // pbsecond
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(236, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(125, 139);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.lblsecondlevel_Click);
+            this.pbsecond.BackColor = System.Drawing.Color.Transparent;
+            this.pbsecond.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbsecond.BackgroundImage")));
+            this.pbsecond.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbsecond.Location = new System.Drawing.Point(236, 92);
+            this.pbsecond.Name = "pbsecond";
+            this.pbsecond.Size = new System.Drawing.Size(125, 139);
+            this.pbsecond.TabIndex = 2;
+            this.pbsecond.TabStop = false;
+            this.pbsecond.Click += new System.EventHandler(this.lblsecondlevel_Click);
+            this.pbsecond.MouseEnter += new System.EventHandler(this.pbsecond_MouseEnter);
+            this.pbsecond.MouseLeave += new System.EventHandler(this.pbsecond_MouseLeave);
             // 
             // pictureBox3
             // 
@@ -159,12 +165,12 @@
             this.Controls.Add(this.lblsecondlevel);
             this.Controls.Add(this.lblfirstlevel);
             this.Controls.Add(this.pbback);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbfirst);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbsecond);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -172,9 +178,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSelectLevel_FormClosed);
+            this.SizeChanged += new System.EventHandler(this.frmSelectLevel_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pbback)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfirst)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbsecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -186,8 +193,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbback;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbfirst;
+        private System.Windows.Forms.PictureBox pbsecond;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;

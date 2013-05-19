@@ -66,6 +66,7 @@
             this.Text = "植物大战僵尸";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLevelOne_FormClosed);
             this.Load += new System.EventHandler(this.frmLevelOne_Load);
+            this.SizeChanged += new System.EventHandler(this.frmLevelOne_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmLevelOne_Paint);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmLevelOne_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Peashooter)).EndInit();

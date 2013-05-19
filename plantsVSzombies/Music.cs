@@ -37,18 +37,18 @@ namespace plantsVSzombies
         #region button音效
         public static void openButtonMusic()
         {
-            mciSendString(@"open ""../../music/puff.mp3", null, 0, 0);
+            mciSendString(@"open ""../../music/bm1.mp3", null, 0, 0);
         }
         public static void playButtonMusic() 
         {
 
             //mciSendString("play  ../../music/button_up.mp3 ", null, 0, 0);
-            mciSendString("play ../../music/puff.mp3", null, 0, 0);
+            mciSendString("play ../../music/bm1.mp3", null, 0, 0);
         }
 
         public static void stopButtonMusic() 
         {
-            mciSendString("stop ../../music/puff.mp3", null, 0, 0);
+            mciSendString("stop ../../music/bm1.mp3", null, 0, 0);
         }
         #endregion
     }

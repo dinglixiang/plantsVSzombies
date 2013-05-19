@@ -42,7 +42,7 @@
             // panel_logo
             // 
             this.panel_logo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_logo.Location = new System.Drawing.Point(-2, -2);
+            this.panel_logo.Location = new System.Drawing.Point(-2, -3);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(796, 592);
             this.panel_logo.TabIndex = 2;
@@ -98,10 +98,11 @@
             this.MaximizeBox = false;
             this.Name = "frmBegin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "植物大战僵尸中文版";
+            this.Text = "植物大战僵尸";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBegin_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBegin_FormClosed);
             this.Load += new System.EventHandler(this.frmBegin_Load);
+            this.SizeChanged += new System.EventHandler(this.frmBegin_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmBegin_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

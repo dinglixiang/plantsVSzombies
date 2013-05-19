@@ -412,7 +412,7 @@
     <value>131, 16</value>
   </metadata>
   <metadata name="timer2_grassCircle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>456, 17</value>
+    <value>290, 16</value>
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -423,8 +423,8 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAYAAACadoJwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOwAAA
-        DsABataJCQAA/3lJREFUeF7s/Xd4XPma3wc2UADZ6d47c2ekSQoraayxsmQrrCzJCn4eSSt7LcurtVZW
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvgAA
+        Dr4B6kKxwAAA/3lJREFUeF7s/Xd4XPma3wc2UADZ6d47c2ekSQoraayxsmQrrCzJCn4eSSt7LcurtVZW
         sNdePSvJa4XRTX07R7K7STbZzKmZmzmCEQRAEETOOVXOVciZYOp3P+/v1AEOClV10I3uuffO3D++z6mq
         U1Ug0QD7fOr7ft/vc9G+XVJYuzm/J6/C/XsknyJ9eyXejXr2Saj/gHgHj8iA97R0+25Ip79a2gINUh/r
         lup4n5QnvXI9HZarI3G5MjIiZSPjcmNkQq6OTsqVsXGO41I2OibXRyfk2ui0XB2bk6vjC3JldA7NfiXp

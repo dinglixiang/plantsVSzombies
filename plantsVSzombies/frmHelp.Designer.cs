@@ -57,6 +57,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "植物大战僵尸";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHelp_FormClosed);
+            this.SizeChanged += new System.EventHandler(this.frmHelp_SizeChanged);
             this.ResumeLayout(false);
 
         }
