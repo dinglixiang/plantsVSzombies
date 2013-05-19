@@ -42,7 +42,7 @@
             // panel_logo
             // 
             this.panel_logo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_logo.Location = new System.Drawing.Point(0, 0);
+            this.panel_logo.Location = new System.Drawing.Point(-2, -2);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(796, 592);
             this.panel_logo.TabIndex = 2;
@@ -111,10 +111,10 @@
 
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.Timer timer_logo;
-        private System.Windows.Forms.Label linkBeginHover;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1_grassCircle;
         private System.Windows.Forms.Timer timer2_grassCircle;
+        public System.Windows.Forms.Label linkBeginHover;
 
     }
 }

@@ -123,14 +123,24 @@ namespace plantsVSzombies
         ProgressBar bar = new ProgressBar();
         Rectangle rec = new Rectangle(228,483,64,61);//将图片儿画在此矩形中
         Image image_grassCircle = Image.FromFile("../../images/grassCircle.png");
+        bool flag = false;
         private void timer1_grassCircle_Tick(object sender, EventArgs e)
-        {
-            bar.nextAction();
+        {         
+            bar.nextAction();       
             this.Invalidate();
         }
         
+        
         private void timer2_grassCircle_Tick(object sender, EventArgs e)
         {
+            if (!flag)
+            {
+                if (bar.getX() > 500)
+                {
+                    linkBeginHover.Image = null;
+                    flag = true;
+                }
+            }
             //rec.X += 10;
             //rec.Height -= 10;
             //rec.Width -= 10;
@@ -166,6 +176,7 @@ namespace plantsVSzombies
 
         private void frmBegin_Load(object sender, EventArgs e)
         {
+            bar.showzairu(linkBeginHover);
             Music.playBackMusic();
             GetImage();         
         }
@@ -175,7 +186,13 @@ namespace plantsVSzombies
         #region 点击开始
         private void linkBeginHover_MouseLeave(object sender, EventArgs e)
         {
-            linkBeginHover.Image = null;
+            if (!flag)
+            {
+                linkBeginHover.Image = Image.FromFile("../../images/zairuzhong.jpg");              
+            }
+            else {
+                linkBeginHover.Image = null;
+            }
         }
 
         private void linkBeginHover_Click(object sender, EventArgs e)
@@ -188,7 +205,13 @@ namespace plantsVSzombies
 
         private void linkBeginHover_MouseEnter(object sender, EventArgs e)
         {
-             linkBeginHover.Image = Image.FromFile("../../images/dianjikaishi.jpg");
+            if (!flag)
+            {
+                linkBeginHover.Image = Image.FromFile("../../images/zairuzhong.jpg");
+            }
+            else {
+                linkBeginHover.Image = Image.FromFile("../../images/dianjikaishi.jpg");
+            }
         }
 
         #endregion
