@@ -13,7 +13,6 @@ namespace plantsVSzombies
 {
     public partial class frmLevelOne : Form
     {
-        
         public frmLevelOne()
         {
             InitializeComponent();
@@ -51,10 +50,10 @@ namespace plantsVSzombies
             this.Controls.Remove(pic_Plants);
         }
         #endregion
-
+        
         private void timer_gameSpeed_Tick(object sender, EventArgs e)
         {
-            Manager.updateAction();
+            Manager.updateAction();    
             this.Invalidate();
         }
 
